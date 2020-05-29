@@ -6,19 +6,23 @@
               <i class="list-icon lnr lnr-home"></i>
                <span class="hide-menu">Dashboard</span></a>
                 <ul class="list-unstyled sub-menu">
-
-                    <li><a href="{{route('rehabilitasi.index')}}">Rehabilitasi</a>
+                    <li>
+                      <a href="{{route('rehabilitasi.index')}}">Rehabilitasi</a>
                     </li>
                   </li>
-                  <li><a href="{{route('statistik.index')}}">Statistik</a>
+                  <li>
+                    <a href="{{route('statistik.index')}}">Statistik</a>
                   </li>
-
                     <li><a href="{{route('hukum.index')}}">Dasar Hukum</a>
                     </li>
                     <li><a href="{{route('dampak.index')}}">Dampak Negatif</a>
                     </li>
                     <li><a href="{{route('pencegahan.index')}}">Upaya Pencegahan</a>
                     </li>
+                    <li>
+                      <a href="{{route('user.index')}}">User</a>
+                    </li>
+
                 </ul>
             </li>
             <li class="menu-item-has-children"><a href="javascript:void(0);"><i class="list-icon lnr lnr-list"></i>

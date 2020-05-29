@@ -99,3 +99,9 @@ Route::group(['prefix' => 'dampak-negatif'], function(){
  Route::get('/', 'AuthAdminController@index');
  Route::post('/admin/login','AuthAdminController@login')->name('admin.login');
  Route::get('/admin/logout', 'AuthAdminController@logout')->name('admin.logout');
+
+//users
+Route::get('/user', 'UserController@index')->name('user.index');
+
+ //
+ Route::get('/pesan', 'PesanController@index')->name('pesan.index');

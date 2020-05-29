@@ -20,3 +20,6 @@ Route::get('zat-adiktif', 'Api\NarkobaController@bhn_adiktif');
 Route::get('pencegahan', 'Api\NarkobaController@pencegahan');
 Route::get('hukum', 'Api\NarkobaController@hukum');
 Route::get('statistik', 'Api\NarkobaController@statistik');
+
+Route::post('register', 'Api\User\AuthUserController@register');
+Route::post('login', 'Api\User\AuthUserController@login');
