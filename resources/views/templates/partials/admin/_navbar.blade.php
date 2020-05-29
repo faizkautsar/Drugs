@@ -37,7 +37,7 @@
                     <i class="lnr lnr-envelope fs-15 mr-2"></i>
                     <span class="heading-font-family fw-400">New Messages</span>
                   </header>
-                  <ul class="card-body list-unstyled dropdown-list-group ps">
+                  <!-- <ul class="card-body list-unstyled dropdown-list-group ps">
                       <li>
                         <a href="{{Route('pesan.index')}}" class="media">
                           <span class="d-flex thumb-xs2 user--online">
@@ -58,7 +58,7 @@
                     </div>
                   </div>
                 </ul>
-                  <!-- /.dropdown-list-group -->
+                  <!-- /.dropdown-list-group --> -->
                   <footer class="card-footer text-center">
                     <a href="javascript:void(0);" class="btn btn-link text-danger fs-12">See all messages</a>
                   </footer>
