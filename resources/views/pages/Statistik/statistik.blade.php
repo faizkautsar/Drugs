@@ -14,7 +14,7 @@
             <th>Kasus</th>
             <th>Tersangka</th>
             <th>Pasien</th>
-            <th>Aksi<th>
+            <th>Aksi</th>
           </tr>
       </thead>
       <tbody>
@@ -31,7 +31,8 @@
                 class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
            </td>
          </tr>
-         @endforeach
+
+@endforeach
     </tbody>
   </table>
 </div>
