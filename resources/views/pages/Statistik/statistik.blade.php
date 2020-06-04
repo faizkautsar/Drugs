@@ -6,7 +6,7 @@
 </div>
 <div class="rows">
   <div class="col-12">
-    <table class="" id="myTable">
+    <table class="table table-bordered" id="myTable">
       <thead>
            <tr>
             <th>NO</th>
@@ -18,8 +18,8 @@
           </tr>
       </thead>
       <tbody>
+        @foreach($statistik as $s)
         <tr>
-           @foreach($statistik as $s)
            <td>{{$s->id}}</td>
            <td>{{$s->daerah}}</td>
            <td>{{$s->kasus}}</td>
@@ -31,7 +31,7 @@
                 class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
            </td>
          </tr>
-      @endforeach
+         @endforeach
     </tbody>
   </table>
 </div>
