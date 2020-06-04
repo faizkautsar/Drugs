@@ -9,7 +9,7 @@
         <label class="col-md-3 col-form-label" for="l0">Aspek</label>
         <div class="col-md-9">
           <input class="form-control "
-          name="aspek" value="aspek" placeholder="Aspek" >
+          name="aspek"  placeholder="Aspek" >
           </div>
       </div>
      <div class="form-group row">

@@ -5,7 +5,7 @@
   <a href="{{route('bhn_adiktif.tambah')}}"class="btn btn-info">Tambah</a>
 </div>
 <div class="row">
-  <div class="col-60">
+  <div class="col-12">
     <table class="table table-bordered" id="myTable">
           <thead>
            <tr>
@@ -18,11 +18,11 @@
           </tr>
           </thead>
           <tbody>
+            @foreach($bhn_adiktif as $bhn_a)
             <tr>
-              @foreach($bhn_adiktif as $bhn_a)
               <td>{{$bhn_a->id}}</td>
               <td>{{$bhn_a->nama}}</td>
-              <td>{!! str_limit($bhn_a->dampak, 50, '...')!!}</td>
+              <td>{!!str_limit($bhn_a->dampak, 50, '...')!!}</td>
               <td>{!!str_limit($bhn_a->keterangan, 50, '...')!!}</td>
               <td> <img src="{{asset('uploads/narkoba/BahanAdiktif/'.$bhn_a->gambar)}}" width="100" height="100" alt=""> </td>
               <td>
