@@ -21,7 +21,7 @@ class CreateNarkotikasTable extends Migration
             $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');
-            $table->enum('status',['1', '0']);
+            $table->enum('status',['1', '0'])->default('1');
             $table->timestamps();
         });
     }
