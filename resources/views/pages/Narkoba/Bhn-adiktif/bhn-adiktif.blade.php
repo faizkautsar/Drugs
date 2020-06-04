@@ -22,8 +22,8 @@
             <tr>
               <td>{{$bhn_a->id}}</td>
               <td>{{$bhn_a->nama}}</td>
-              <td>{!!str_limit($bhn_a->dampak, 50, '...')!!}</td>
-              <td>{!!str_limit($bhn_a->keterangan, 50, '...')!!}</td>
+              <td>{!!str_limit($bhn_a->dampak, 30, '...')!!}</td>
+              <td>{!!str_limit($bhn_a->keterangan, 30, '...')!!}</td>
               <td> <img src="{{asset('uploads/narkoba/BahanAdiktif/'.$bhn_a->gambar)}}" width="100" height="100" alt=""> </td>
               <td>
                 <a href="{{route('bhn_adiktif.lihat', $bhn_a->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
