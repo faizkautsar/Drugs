@@ -17,7 +17,7 @@ class CreatePsikotropikasTable extends Migration
             $table->Increments('id');
             $table->string('nama','100');
             $table->string('golongan','50');
-            $table->text('efek');
+            $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');
             $table->enum('status',['1','0']);

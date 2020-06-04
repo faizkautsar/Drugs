@@ -18,7 +18,7 @@ class CreateNarkotikasTable extends Migration
             $table->string('nama', '100');
             $table->string('jenis', '100');
             $table->string('golongan', '50');
-            $table->text('efek');
+            $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');
             $table->enum('status',['1', '0']);

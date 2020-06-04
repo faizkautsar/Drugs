@@ -16,7 +16,7 @@ class CreateBhnAdiktifsTable extends Migration
         Schema::create('bhn_adiktifs', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('nama', '100');
-            $table->text('efek');
+            $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');
             $table->enum('status',['1','0']);
