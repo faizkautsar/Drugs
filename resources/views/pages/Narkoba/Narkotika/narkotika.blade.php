@@ -26,8 +26,8 @@
            <td>{{$n_dt->nama}}</td>
            <td>{{$n_dt->jenis == 'nss' ? 'Narkotika Semi Sensitis' : 'Narkotika'}}</td>
             <td>{{$n_dt->golongan}}</td>
-            <td>{!!str_limit($n_dt->dampak,50, '....')!!}</td>
-            <td>{!!$n_dt->keterangan!!}</td>
+            <td>{!!str_limit($n_dt->dampak,50, '...')!!}</td>
+            <td>{!!str_limit($n_dt->keterangan, 50, '...')!!}</td>
             <td><img src="{{asset('uploads/narkoba/narkotika/'.$n_dt->gambar)}}" width="100" height="100" alt=""> </td>
             <td>
               <a href="{{route('narkotika.lihat', $n_dt->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
