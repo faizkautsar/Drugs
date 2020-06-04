@@ -68,7 +68,8 @@
           <!-- /.dropdown-menu -->
       </li>
       <!-- /.dropdown -->
-      <li><a href="javascript:void(0);" class="right-sidebar-toggle"><span><i class="list-icon lnr lnr-users"></i> </span>Chat</a>
+      <li><a href="javascript:void(0);" class="right-sidebar-toggle">
+        <span><i class="list-icon lnr lnr-users"></i> </span>Chat</a>
       </li>
   </ul>
         <!-- /.navbar-right -->
