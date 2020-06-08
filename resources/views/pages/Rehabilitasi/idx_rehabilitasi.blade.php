@@ -10,9 +10,8 @@
             <thead>
              <tr>
               <th>NO</th>
-              <th>Nama</th>
-              <th>Umur</th>
-              <th>Alamat</th>
+              <th>Inisial</th>
+              <th>Tanggal Lahir</th>
               <th>Keterangan</th>
               <th>Rujukan</th>
               <th>Aksi</th>
@@ -22,9 +21,8 @@
              @foreach($rehabilitasi as $r)
              <tr>
              <td>{{$r->id}}</td>
-             <td>{{$r->nama}}</td>
-             <td>{{$r->umur}}</td>
-              <td>{{$r->alamat}}</td>
+             <td>{{$r->inisial}}</td>
+             <td>{{$r->tanggal_lahir}}</td>
               <td>{{$r->keterangan}}</td>
               <td>{{$r->rujukan}}</td>
               <td>

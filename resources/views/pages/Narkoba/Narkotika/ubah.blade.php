@@ -81,7 +81,8 @@
             <div class="form-group row">
                 <div class="col-md-9 ml-md-auto btn-list">
                     <button class="btn btn-primary btn-rounded" type="submit">Simpan</button>
-
+                    <button type="button" onclick="window.location='{{route("narkotika.index")}}'"
+                    class="btn btn-danger btn-rounded" name="button">Kembali</button>
                 </div>
             </div>
         </div>

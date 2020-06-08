@@ -38,14 +38,25 @@ class RehabilitasiController extends Controller
     {
 
           $this->validate($request,[
-            'nama'=>'required',
-            'umur'=> 'required|max:2',
+            'nama_lengkap'=>'required',
             'rujukan'=> 'required'
           ]);
 
+        $names = explode(" ", $request->nama_lengkap);
+        $results = [];
+        foreach ($names as $name) {
+          $initial = substr($name, 0, 1);
+          array_push($results, $initial);
+        }
+        $initial_implode = implode("", $results);
+
         $rehabilitasi = new Rehabilitasi();
-        $rehabilitasi->nama = $request->nama;
-        $rehabilitasi->umur = $request->umur;
+        $rehabilitasi->inisial = $initial_implode;
+        $rehabilitasi->nama_lengkap = $request->nama_lengkap;
+        $rehabilitasi->tanggal_lahir = $request->tanggal_lahir;
+        $rehabilitasi->alamat = $request->alamat;
+        $rehabilitasi->keterangan = $request->keterangan;
+        $rehabilitasi->pekerjaan = $request->pekerjaan;
         $rehabilitasi->rujukan = $request->rujukan;
         $rehabilitasi->save();
 
@@ -85,15 +96,28 @@ class RehabilitasiController extends Controller
     {
       {
           $this->validate($request,[
-            'nama'=>'required',
-            'umur'=> 'required|max:2',
+            'nama_lengkap'=>'required',
             'rujukan'=> 'required'
               ]);
           $rehabilitasi = Rehabilitasi::findOrFail($id);
           }
 
-          $rehabilitasi->nama = $request->nama;
-          $rehabilitasi->umur = $request->umur;
+          $names = explode(" ", $request->nama_lengkap);
+          $results = [];
+          foreach ($names as $name) {
+            $initial = substr($name, 0, 1);
+            array_push($results, $initial);
+          }
+
+          $initial_implode = implode("", $results);
+
+
+          $rehabilitasi->inisial = $initial_implode;
+          $rehabilitasi->nama_lengkap = $request->nama_lengkap;
+          $rehabilitasi->tanggal_lahir = $request->tanggal_lahir;
+          $rehabilitasi->alamat = $request->alamat;
+          $rehabilitasi->keterangan = $request->keterangan;
+          $rehabilitasi->pekerjaan = $request->pekerjaan;
           $rehabilitasi->rujukan = $request->rujukan;
           $rehabilitasi->update();
 

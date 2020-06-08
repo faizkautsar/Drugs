@@ -17,7 +17,7 @@
         </ul>
         <!-- /.navbar-left -->
         <!-- Search Form -->
-        <form class="navbar-search d-none d-sm-block" role="search"><i class="list-icon lnr lnr-magnifier"></i>
+        <!-- <form class="navbar-search d-none d-sm-block" role="search"><i class="list-icon lnr lnr-magnifier"></i>
             <input type="search" class="search-query" placeholder="Search anything...">
             <a href="javascript:void(0);" class="remove-focus">
               <i class="lnr lnr-cross"></i></a>
@@ -25,13 +25,14 @@
         <!-- /.navbar-search -->
         <div class="spacer"></div>
         <!-- Right Menu -->
-
+<!--
   <ul class="nav navbar-nav d-none d-lg-flex ml-2 ml-0-rtl">
-      <li class="dropdown show"><a href="{{Route('pesan.index')}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+      <li class="dropdown show">
+        <a href="{{Route('pesan.index')}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         <span><i class="list-icon lnr lnr-alarm"></i>
           <span class="button-pulse bg-danger"></span>
             </span>Messages</a>
-          <div class="dropdown-menu dropdown-left dropdown-card animated flipInY show">
+          <!-- <div class="dropdown-menu dropdown-left dropdown-card animated flipInY show">
               <div class="card">
                   <header class="card-header d-flex justify-content-center align-items-center mb-0">
                     <i class="lnr lnr-envelope fs-15 mr-2"></i>
@@ -58,20 +59,20 @@
                     </div>
                   </div>
                 </ul>
-                  <!-- /.dropdown-list-group --> -->
-                  <footer class="card-footer text-center">
+                  <!-- /.dropdown-list-group -->
+                  <!-- <footer class="card-footer text-center">
                     <a href="javascript:void(0);" class="btn btn-link text-danger fs-12">See all messages</a>
-                  </footer>
-              </div>
+                  </footer> -->
+              <!-- </div>
               <!-- /.card -->
-          </div>
+          <!-- </div> -->
           <!-- /.dropdown-menu -->
-      </li>
+      <!-- </li> -->
       <!-- /.dropdown -->
-      <li><a href="javascript:void(0);" class="right-sidebar-toggle">
+      <!-- <li><a href="javascript:void(0);" class="right-sidebar-toggle">
         <span><i class="list-icon lnr lnr-users"></i> </span>Chat</a>
       </li>
-  </ul>
+  </ul> -->
         <!-- /.navbar-right -->
         <!-- User Image with Dropdown -->
         <ul class="nav navbar-nav">
