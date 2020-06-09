@@ -66,10 +66,8 @@
                 <div class="col-md-9 ml-md-auto btn-list">
                     <button class="btn btn-primary btn-rounded" type="submit">Simpan</button>
                     <a type="button" onclick="return confirm('Apakah Anda Yakin Untuk Membatalkannya?')" href="{{route("rehabilitasi.index")}}"
-                     class="btn btn-danger btn-rounded" name="button">Batal</a>
-                    <button type="button" onclick="window.location='{{route("rehabilitasi.index")}}'"
-                     class="btn btn-danger btn-rounded" name="button">Kembali</button>
-                </div>
+                     class="btn btn-danger btn-rounded" name="button">Kembali</a>
+                    </div>
             </div>
         </div>
         </form>
