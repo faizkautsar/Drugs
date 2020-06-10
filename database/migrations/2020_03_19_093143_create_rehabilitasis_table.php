@@ -16,7 +16,7 @@ class CreateRehabilitasisTable extends Migration
         Schema::create('rehabilitasis', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('inisial','6');
-            $table->string('nama_lengkap','50')
+            $table->string('nama_lengkap','50');
             $table->date('tanggal_lahir');
             $table->text('alamat')->nullable();
             $table->text('keterangan')->nullable();
