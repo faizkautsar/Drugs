@@ -57,7 +57,7 @@
             <div class="form-group row">
                 <div class="col-md-9 ml-md-auto btn-list">
                     <button class="btn btn-primary btn-rounded" type="submit">Simpan</button>
-                    <a type="button" onclick="return confirm('Apakah Anda Yakin Untuk Membatalkannya?')" href="{{route("rehabilitasi.index")}}"
+                    <a type="button" onclick="return confirm('Apakah Anda Yakin Untuk Membatalkannya?')" href="{{route("dampak.index")}}"
                      class="btn btn-danger btn-rounded" name="button">Kembali</a>
                 </div>
             </div>
