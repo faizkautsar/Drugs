@@ -11,15 +11,33 @@ use App\Bhn_adiktif;
 use App\Pencegahan;
 use App\Hukum;
 use App\Statistik;
+use Carbon\Carbon;
 
 class NarkobaController extends Controller
 {
     public function rehabilitasi(){
       $rehabilitasi = Rehabilitasi::all();
+
+      $results = [];
+      foreach ($rehabilitasi as $value) {
+          $results = [
+            'id' => $value->id,
+            "inisial" => $value->inisial,
+            "nama_lengkap" =>  $value->nama_lengkap,
+            "tanggal_lahir" => $value->tanggal_lahir,
+            "umur"  => Carbon::parse($value->tanggal_lahir)->age,
+            "alamat" => $value->alamat,
+            "keterangan" => $value->keterangan,
+            "pekerjaan" => $value->pekerjaan,
+            "rujukan" => $value->rujukan
+          ];
+      }
+
+
       return response()->json([
         'message' => 'Berhasil',
         'status' => true,
-        'data' => $rehabilitasi
+        'data' => $results
       ]);
     }
 
