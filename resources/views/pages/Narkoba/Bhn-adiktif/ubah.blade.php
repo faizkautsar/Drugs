@@ -13,7 +13,7 @@
           name="nama" placeholder="nama BahanAdiktif" type="text" value="{{$bhn_adiktif->nama}}">
           @if ($errors->has('nama'))
             <span class="invalid-feedback" role="alert">
-              <p><b>{{ $errors->first('nama') }}</b></p>
+              <b>{{ $errors->first('nama') }}</b>
             </span>
           @endif
         </div>

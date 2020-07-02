@@ -20,7 +20,7 @@ class NarkobaController extends Controller
 
       $results = [];
       foreach ($rehabilitasi as $value) {
-          $results = [
+          $results[] = [
             'id' => $value->id,
             "inisial" => $value->inisial,
             "nama_lengkap" =>  $value->nama_lengkap,
@@ -92,5 +92,5 @@ class NarkobaController extends Controller
         'data' => $statistik
       ]);
     }
-    
+
 }
