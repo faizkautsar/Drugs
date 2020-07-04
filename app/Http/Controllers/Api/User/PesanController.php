@@ -65,12 +65,12 @@ class PesanController extends Controller
         'status' => true,
         'data' => (object) []
       ]);
-    // }else {
-    //   return response()->json([
-    //     'message' => 'Akun anda dinonaktifkan',
-    //     'status' => false,
-    //     'data' => (object) []
-    //   ]);
-    // }
+    }else {
+      return response()->json([
+        'message' => 'Akun anda dinonaktifkan',
+        'status' => false,
+        'data' => (object) []
+      ]);
+    }
   }
 }
