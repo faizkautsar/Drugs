@@ -46,7 +46,7 @@ class PesanController extends Controller
 
       $this->validate($request, $rule, $message);
 
-      $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
+      $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;
       Laporan::create([
         'peran' => $request->peran,
         'nama' => $request->nama,
@@ -65,12 +65,12 @@ class PesanController extends Controller
         'status' => true,
         'data' => (object) []
       ]);
-    }else {
-      return response()->json([
-        'message' => 'Akun anda dinonaktifkan',
-        'status' => false,
-        'data' => (object) []
-      ]);
-    }
+    // }else {
+    //   return response()->json([
+    //     'message' => 'Akun anda dinonaktifkan',
+    //     'status' => false,
+    //     'data' => (object) []
+    //   ]);
+    // }
   }
 }
