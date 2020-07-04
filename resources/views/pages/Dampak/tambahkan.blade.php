@@ -5,18 +5,7 @@
    <p class="text-muted">Dampak Negatif</p>
     <form method="post" enctype="multipart/form-data" action="{{route('dampak.store')}}">
       @csrf
-     <div class="form-group row">
-        <label class="col-md-3 col-form-label" for="l0">Anggota Tubuh</label>
-        <div class="col-md-9">
-          <input class="form-control {{$errors->has('tubuh')?'is-invalid':''}}"
-          name="tubuh" placeholder="anggota_tubuh" type="text"  value="{{old('tubuh')}}">
-          @if ($errors->has('tubuh'))
-            <span class="invalid-feedback" role="alert">
-              <p><b>{{ $errors->first('tubuh') }}</b></p>
-            </span>
-          @endif
-        </div>
-      </div>
+
         <div class="form-group row">
            <label class="col-md-3 col-form-label" for="l0">Keterangan</label>
            <div class="col-md-9">
@@ -28,18 +17,6 @@
                </span>
              @endif
            </div>
-      </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label"  for="l15">Bahaya</label>
-            <div class="col-md-9">
-                <textarea class="form-control {{$errors->has('bahaya')?'is-invalid':''}}"
-                   name="bahaya" rows="3">{{old('bahaya')}}</textarea>
-                @if ($errors->has('bahaya'))
-                  <span class="invalid-feedback" role="alert">
-                    <p><b>{{ $errors->first('bahaya') }}</b></p>
-                  </span>
-                @endif
-            </div>
         </div>
         <div class="form-group row">
             <label class="col-md-3 col-form-label"  for="l16">File input</label>

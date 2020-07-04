@@ -10,35 +10,31 @@
           <thead>
            <tr>
             <th>NO</th>
-            <th>Dari</th>
-            <th>Nama Terlapor</th>
-            <th>No Telpon</th>
-            <th>Alamat Terlapor</th>
+            <th>Peran</th>
+            <th>Nama </th>
+            <th>Alamat </th>
             <th>Jenis Narkoba</th>
-            <th>Peran Terlapor</th>
-            <th>Profesi/Pekerjaan</th>
-            <th>Alamat Profesi </th>
-            <th>Kendaraan</th>
-            <th>Lokasi Penggunaan</th>
-            <th>Lokasi Terlihat</th>
-             
-            <th>Informasi</th>
+            <th>Pekerjaan</th>
+            <th>Transaksi</th>
+            <th>Status</th>
+            <th>Aksi</th>
 
           </tr>
           </thead>
           <tbody>
-            @foreach($user as $usr)
+            @foreach($laporan as $lp)
             <tr>
-           <td>{{$usr->id}}</td>
-           <th>{{$usr->nama}}</th>
-           <th>{{$usr->email}}</th>
-           <th>{{$usr->no_telp}}</th>
-           <th>{{$usr->alamat}}</th>
-           <th>{{$usr->desa}}</th>
-           <th>{{$usr->kecamatan}}</th>
-           <th>{{$usr->kode_pos}}</th>
+           <td>{{$lp->id}}</td>
+           <th>{{$lp->peran}}</th>
+           <th>{{$lp->nama}}</th>
+           <th>{{$lp->alamat}}</th>
+           <th>{{$lp->jenis_narkoba}}</th>
+           <th>{{$lp->pekerjaan}}</th>
+           <th>{{$lp->transaksi}}</th>
+           <th>{{$lp->status}}</th>
            <td>
-              <a href="{{route('narkotika.ubah', $usr->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
+             <a href="#"></a>
+              <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
            </td>
          </tr>
 

@@ -38,9 +38,7 @@ class BahayaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-          'tubuh'=>'required',
           'keterangan'=>'required',
-          'bahaya'=>'required',
           'gambar'=>'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
@@ -50,9 +48,7 @@ class BahayaController extends Controller
         $gambar->move($tempatfile, $filename);
 
         $bahaya = new Bahaya();
-        $bahaya->tubuh = $request->tubuh;
         $bahaya->keterangan = $request->keterangan;
-        $bahaya->bahaya = $request->bahaya;
         $bahaya->gambar = $filename;
         $bahaya->save();
 
@@ -95,9 +91,7 @@ class BahayaController extends Controller
     {
 
           $this->validate($request,[
-            'tubuh' =>'required',
             'keterangan' => 'required',
-            'bahaya' => 'required',
             'gambar' =>'image|mimes:jpg,png,jpeg|max:2048',
           ]);
           $bahaya = Bahaya::findOrFail($id);
@@ -112,9 +106,7 @@ class BahayaController extends Controller
 
           }
 
-          $bahaya->tubuh = $request->tubuh;
           $bahaya->keterangan =$request->keterangan;
-          $bahaya->bahaya =$request->bahaya;
           $bahaya->gambar = $filename;
           $bahaya->update();
 

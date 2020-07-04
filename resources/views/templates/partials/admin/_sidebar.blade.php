@@ -2,9 +2,9 @@
     <!-- Sidebar Menu -->
     <nav class="sidebar-nav">
         <ul class="nav in side-menu">
-            <li class="menu-item-has-children current-page active"><a href="{{route('narkotika.index')}}">
+            <li class="menu-item-has-children current-page active"><a href="{{route('laporan.index')}}">
               <i class="list-icon lnr lnr-home"></i>
-               <span class="hide-menu">Dashboard</span></a>
+               <span class="hide-menu" >Dashboard</span></a>
                 <ul class="list-unstyled sub-menu">
                     <li>
                       <a href="{{route('rehabilitasi.index')}}">Rehabilitasi</a>
@@ -22,7 +22,9 @@
                     <li>
                       <a href="{{route('user.index')}}">User</a>
                     </li>
-
+                    <li>
+                      <a href="{{route('laporan.index')}}">Laporan</a>
+                    </li>
                 </ul>
             </li>
             <li class="menu-item-has-children"><a href="javascript:void(0);"><i class="list-icon lnr lnr-list"></i>

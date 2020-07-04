@@ -6,17 +6,6 @@
     <form method="post" enctype="multipart/form-data" action="{{route('dampak.update',$bahaya->id)}}">
       @csrf
       @method('PATCH')
-     <div class="form-group row">
-        <label class="col-md-3 col-form-label" for="l0">Anggota Tubuh</label>
-        <div class="col-md-9">
-          <input class="form-control {{$errors->has('tubuh')?'is-invalid':''}}"
-          name="tubuh" placeholder="anggota-tubuh" type="text" value="{{$bahaya->tubuh}}">
-          @if ($errors->has('tubuh'))
-            <span class="invalid-feedback" role="alert">
-              <p><b>{{ $errors->first('tubuh') }}</b></p>
-            </span>
-          @endif
-        </div>
         <div class="form-group row">
             <label class="col-md-3 col-form-label"  for="l15">Keterangan</label>
             <div class="col-md-9">
@@ -25,18 +14,6 @@
                 @if ($errors->has('keterangan'))
                   <span class="invalid-feedback" role="alert">
                     <p><b>{{ $errors->first('keterangan') }}</b></p>
-                  </span>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label"  for="l15">Bahaya</label>
-            <div class="col-md-9">
-                <textarea class="form-control {{$errors->has('bahaya')?'is-invalid':''}}"
-                   name="bahaya" id="basic-1" rows="3">{{$bahaya->bahaya}}</textarea>
-                @if ($errors->has('bahaya'))
-                  <span class="invalid-feedback" role="alert">
-                    <p><b>{{ $errors->first('bahaya') }}</b></p>
                   </span>
                 @endif
             </div>

@@ -10,8 +10,6 @@
               <img class="card-img-top" src="{{asset('uploads/narkoba/dampak/'.$bahaya->gambar)}}" height="400" alt="">
             </a>
           </figure>
-          <span class="badge badge-danger text-uppercase">Anggota Tubuh: {{$bahaya->tubuh}}</span>
-
         </div>
         <div class="card-body sub-heading-font-family">
           <div class="col-sm-12 col-md-12">
@@ -22,18 +20,6 @@
              </section>
            </div>
          </div>
-     <div class="col-sm-12 col-md-12">
-        <div class="icon-box icon-box-side icon-box-circle-bg">
-          <header class="align-self-start">
-            <a href="#" class="bg-danger">
-            <i class="lnr lnr-sad"></i></a>
-          </header>
-            <section>
-                <h6 class="icon-box-title">Bahaya</h6>
-                <p class="text-danger">{!!$bahaya->bahaya!!}</p>
-            </section>
-        </div>
-    </div>
 
   </div>
 

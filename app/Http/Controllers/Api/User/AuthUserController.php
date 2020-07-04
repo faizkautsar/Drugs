@@ -16,10 +16,10 @@ class AuthUserController extends Controller
         'email' => 'required|email|unique:users',
         'password'=>'required|min:6',
         'no_telp' => 'required|numeric|unique:users|digits_between:11,13',
-        'alamat' => 'required|min:5',
+        'jalan' => 'required|min:5',
         'desa' => 'required|min:3',
         'kecamatan' => 'required|min:3|max:50',
-        'kode_pos' => 'required|numeric|digits_between:5,5'
+        'kota' => 'required'
       ];
 
       $message = [
@@ -29,24 +29,21 @@ class AuthUserController extends Controller
         'email.unique' => 'Email sudah terdaftar',
         'password.min' => 'Password Terlalu Pendek',
         'no_telp.unique' => 'No Telepon sudah terdaftar',
-        'alamat.min' => 'Alamat terlalu pendek',
+        'jalan.min' => 'Jalan terlalu pendek',
         'desa.min' => 'Nama desa terlalu pendek',
         'kecamatan.min' => 'Nama kecamatan terlalu pendek',
         'kecamatan.max' => 'Nama kecamatan terlalu panjang',
-        'kode_pos.digits_between' => 'Kode Pos tidak benar',
+
       ];
 
       $this->validate($request, $rule, $message);
-
+      $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
       $user = User::create([
         'nama' => $request->nama,
         'email' => $request->email,
         'password' => bcrypt($request->password),
         'no_telp' => $request->no_telp,
-        'alamat' => $request->alamat,
-        'desa' => $request->desa,
-        'kecamatan' => $request->kecamatan,
-        'kode_pos' => $request->kode_pos,
+        'alamat' => $alamat,
         'api_token' => bcrypt($request->email),
       ]);
 

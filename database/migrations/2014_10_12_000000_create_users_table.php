@@ -21,9 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('no_telp',13)->unique();
             $table->text('alamat');
-            $table->string('desa','50');
-            $table->string('kecamatan','50');
-            $table->char('kode_pos',5);
             $table->string('api_token');
             $table->boolean('status')->default(true);
             $table->timestamps();

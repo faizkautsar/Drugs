@@ -14,10 +14,8 @@
             <th>Email</th>
             <th>Nomor Telepon</th>
             <th>Alamat</th>
-            <th>Desa</th>
-            <th>Kecamatan</th>
-            <th>Kode Pos</th>
             <th>Status</th>
+
           </tr>
           </thead>
           <tbody>
@@ -28,11 +26,20 @@
            <th>{{$usr->email}}</th>
            <th>{{$usr->no_telp}}</th>
            <th>{{$usr->alamat}}</th>
-           <th>{{$usr->desa}}</th>
-           <th>{{$usr->kecamatan}}</th>
-           <th>{{$usr->kode_pos}}</th>
            <td>
-              <a href="{{route('narkotika.ubah', $usr->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
+             <button type="button" class="btn {{$usr->status ? 'btn-success' : 'btn-danger'}} btn-sm">{{$usr->status ? 'Aktif' : 'Tidak aktif'}}</button>
+           </td>
+           <td>
+             <div class="checkbox checkbox-rounded checkbox-info">
+                <label class="checkbox-checked">
+              <input type="checkbox" checked="checked"> <span class="label-text">Aktif</span>
+              </label>
+              </div>
+              <div class="checkbox checkbox-rounded checkbox-danger">
+                 <label class="checkbox-checked">
+               <input type="checkbox" checked="checked"> <span class="label-text">Tidak Aktif</span>
+               </label>
+               </div>
            </td>
          </tr>
 

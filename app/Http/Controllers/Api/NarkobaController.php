@@ -9,6 +9,7 @@ use App\Narkotika;
 use App\Psikotropika;
 use App\Bhn_adiktif;
 use App\Pencegahan;
+use App\Bahaya;
 use App\Hukum;
 use App\Statistik;
 use Carbon\Carbon;
@@ -34,7 +35,7 @@ class NarkobaController extends Controller
       }
 
 
-      return response()->json([
+    return response()->json([
         'message' => 'Berhasil',
         'status' => true,
         'data' => $results
@@ -49,6 +50,7 @@ class NarkobaController extends Controller
         'data' => $narkotika
       ]);
     }
+
     public function psikotropika(){
       $psikotropika = Psikotropika::all();
       return response()->json([
@@ -93,4 +95,13 @@ class NarkobaController extends Controller
       ]);
     }
 
+    public function bahaya() {
+      $bahaya = Bahaya::all();
+
+      return response()->json([
+        'message' => 'Berhasil',
+        'status' => true,
+        'data' => $bahaya
+      ]);
+    }
 }

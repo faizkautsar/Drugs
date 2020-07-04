@@ -7,9 +7,7 @@
             <thead>
              <tr>
               <th>NO</th>
-              <th>Anggota Tubuh</th>
               <th>Keterangan</th>
-              <th>Bahaya</th>
               <th>Gambar</th>
               <th>Aksi</th>
             </tr>
@@ -18,9 +16,7 @@
               <tr>
              @foreach($bahaya as $b)
              <td>{{$b->id}}</td>
-             <td>{{$b->tubuh}}</td>
              <td>{!!$b->keterangan!!}</td>
-             <td>{!!$b->bahaya!!}</td>
              <td><img src="{{asset('uploads/narkoba/dampak/'.$b->gambar)}}" width="100" height="100" alt=""></td>
              <td>
                <a href="{{route('dampak.lihat', $b->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>

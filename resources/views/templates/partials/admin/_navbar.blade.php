@@ -22,26 +22,26 @@
             <a href="javascript:void(0);" class="remove-focus">
               <i class="lnr lnr-cross"></i></a>
         </form>
-        <!-- /.navbar-search -->
+        <!- /.navbar-search -->
         <div class="spacer"></div>
-        <!-- Right Menu -->
+        <!-- <!- Right Menu -->
 <!--
   <ul class="nav navbar-nav d-none d-lg-flex ml-2 ml-0-rtl">
       <li class="dropdown show">
-        <a href="{{Route('pesan.index')}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         <span><i class="list-icon lnr lnr-alarm"></i>
           <span class="button-pulse bg-danger"></span>
             </span>Messages</a>
-          <!-- <div class="dropdown-menu dropdown-left dropdown-card animated flipInY show">
+          <!- <div class="dropdown-menu dropdown-left dropdown-card animated flipInY show">
               <div class="card">
                   <header class="card-header d-flex justify-content-center align-items-center mb-0">
                     <i class="lnr lnr-envelope fs-15 mr-2"></i>
                     <span class="heading-font-family fw-400">New Messages</span>
                   </header>
-                  <!-- <ul class="card-body list-unstyled dropdown-list-group ps">
+                  <!- <ul class="card-body list-unstyled dropdown-list-group ps">
                       <li>
-                        <a href="{{Route('pesan.index')}}" class="media">
-                          <span class="d-flex thumb-xs2 user--online">
+                        <a href="#" class="media">
+                          <span class="d-flex thumb-xs2 user-online">
                         <img src="assets/demo/users/2.jpg" class="rounded-circle" alt=""> </span>
                         <span class="media-body">
                           <span class="heading-font-family media-heading">Steve Smith</span>
@@ -59,12 +59,12 @@
                     </div>
                   </div>
                 </ul>
-                  <!-- /.dropdown-list-group -->
+                  <!- /.dropdown-list-group -->
                   <!-- <footer class="card-footer text-center">
                     <a href="javascript:void(0);" class="btn btn-link text-danger fs-12">See all messages</a>
                   </footer> -->
               <!-- </div>
-              <!-- /.card -->
+              <!- /.card -->
           <!-- </div> -->
           <!-- /.dropdown-menu -->
       <!-- </li> -->

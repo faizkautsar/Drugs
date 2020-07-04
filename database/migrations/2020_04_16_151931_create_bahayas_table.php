@@ -15,10 +15,8 @@ class CreateBahayasTable extends Migration
     {
         Schema::create('bahayas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tubuh','15');
             $table->string('keterangan', '150');
-            $table->text('bahaya');
-            $table->string('gambar','191');
+            $table->string('gambar');
             $table->timestamps();
         });
     }

@@ -9,6 +9,7 @@ Route::get('/admin', function () {
     return view('templates.admin');
 });
 
+Route::get('/admin', 'DashboardController@index')->name('dash.index');
 //
 // //narkotika
 Route::group(['prefix' => 'narkotika'], function(){
@@ -104,4 +105,4 @@ Route::group(['prefix' => 'dampak-negatif'], function(){
 Route::get('/user', 'UserController@index')->name('user.index');
 
  //
- Route::get('/pesan', 'PesanController@index')->name('pesan.index');
+ Route::get('/laporan', 'DashboardController@laporan')->name('laporan.index');
