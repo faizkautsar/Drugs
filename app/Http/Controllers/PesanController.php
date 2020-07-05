@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Pesan;
+use App\Laporan;
 use Illuminate\Http\Request;
 
 class PesanController extends Controller
@@ -11,11 +11,11 @@ class PesanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $pesan = Pesan::all();
-        return view('pages.Pesan.pesan', compact('pesan'));
-    }
+    public function laporan()
+{
+    $laporan = Laporan::all();
+    return view ('pages.Lapor.pesan', compact('laporan'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +46,8 @@ class PesanController extends Controller
      */
     public function show($id)
     {
-        //
+      $laporan = Laporan::find($id);
+      return view ('pages.Lapor.laporan', compact('laporan'));
     }
 
     /**

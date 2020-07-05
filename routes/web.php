@@ -105,4 +105,5 @@ Route::group(['prefix' => 'dampak-negatif'], function(){
 Route::get('/user', 'UserController@index')->name('user.index');
 
  //
- Route::post('/laporan', 'DashboardController@laporan')->name('laporan.index');
+ Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
+ Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');

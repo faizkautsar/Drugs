@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Laporan;
+use App\User;
+use App\Rehabilitasi;
 class DashboardController extends Controller
 {
   public function _construct()
@@ -15,12 +17,9 @@ class DashboardController extends Controller
 
     {
       $laporan = Laporan::all();
-    return View('pages.Dashboard.dashboard', compact('laporan'));
+      $user = User::all();
+      $rehabilitasi = Rehabilitasi::all();
+    return View('pages.Dashboard.dashboard', compact('laporan','user','rehabilitasi'));
     }
-    public function laporan()
-{
-    $laporan = Laporan::all();
-    return view ('pages.Lapor.pesan', compact('laporan'));
-}
 
-}
+  }

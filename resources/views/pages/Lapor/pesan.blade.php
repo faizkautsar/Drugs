@@ -30,11 +30,11 @@
            <th>{{$lp->alamat}}</th>
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
-           <th>{{$lp->transaksi}}</th>
+           <th>{{$lp->tmpt_transaksi}}</th>
            <th>{{$lp->status}}</th>
            <td>
              <a href="#"></a>
-              <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
+              <a href="{{ route('lihat_laporan.index', $lp->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
            </td>
          </tr>
 
