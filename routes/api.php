@@ -25,4 +25,5 @@ Route::get('bahaya', 'Api\NarkobaController@bahaya');
 
 Route::post('register', 'Api\User\AuthUserController@register');
 Route::post('login', 'Api\User\AuthUserController@login');
+
 Route::post('laporan','Api\User\PesanController@laporan');

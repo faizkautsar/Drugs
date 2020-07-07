@@ -54,17 +54,6 @@ Route::group(['prefix' => 'rehabilitasi'], function(){
 });
 
 
-Route::group(['prefix' => 'statistik'], function(){
-   Route::get('/', 'StatistikController@index')->name('statistik.index');
-   Route::get('tambah', 'StatistikController@create')->name('statistik.tambah');
-   Route::post('tambah', 'StatistikController@store')->name('statistik.store');
-   Route::get('ubah/{id}', 'StatistikController@edit')->name('statistik.ubah');
-   Route::patch('ubah/{id}', 'StatistikController@update')->name('statistik.update');
-   Route::get('hapus/{id}', 'StatistikController@destroy')->name('statistik.hapus');
-
-
-});
-
 Route::group(['prefix' => 'hukum'], function(){
    Route::get('/', 'HukumController@index')->name('hukum.index');
    Route::get('tambah', 'HukumController@create')->name('hukum.tambah');
@@ -105,5 +94,6 @@ Route::group(['prefix' => 'dampak-negatif'], function(){
 Route::get('/user', 'UserController@index')->name('user.index');
 
  //
+
  Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
  Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
