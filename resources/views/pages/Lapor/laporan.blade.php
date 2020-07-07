@@ -36,7 +36,7 @@
 
                                <h6 class="icon-box-title">Tempat Transaksi/Menggunakan Narkoba</h6>
                                <p>{!!$laporan->tmpt_transaksi!!}</p>
-                           
+
                        </section>
 
                    </div>
@@ -106,8 +106,16 @@
             </div>
 
             <div class="card-action">
-              <button type="button" onclick="window.location='{{route("laporan.index")}}'" class="btn btn-info" name="button">Kembali</button>
+              <button type="button" onclick="window.location='{{route("laporan.index")}}'" class="btn btn-secondary" name="button">Kembali</button>
+            @if(!$laporan->status)
+                <button type="button"  onclick="event.preventDefault();
+                         document.getElementById('konfirmasi-laporan').submit();" class="btn btn-success" name="button">Konfirmasi</button>
 
+                <form id="konfirmasi-laporan" action="{{ route('update.laporan', $laporan) }}" method="POST" style="display: none">
+                   @csrf
+                   @method("PATCH")
+               </form>
+              @endif
             </div>
 
         </div>

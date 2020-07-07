@@ -30,19 +30,32 @@
              <button type="button" class="btn {{$usr->status ? 'btn-success' : 'btn-danger'}} btn-sm">{{$usr->status ? 'Aktif' : 'Tidak aktif'}}</button>
            </td>
            <td>
-             <div class="checkbox checkbox-rounded checkbox-info">
-                <label class="checkbox-checked">
-              <input type="checkbox" checked="checked"> <span class="label-text">Aktif</span>
-              </label>
-              </div>
-              <div class="checkbox checkbox-rounded checkbox-danger">
-                 <label class="checkbox-checked">
-               <input type="checkbox" checked="checked"> <span class="label-text">Tidak Aktif</span>
-               </label>
-               </div>
+             <a href="#" data-toggle="modal" data-target=".bs-modal-md-info{{$usr->id}}" class="mr-3 btn btn-sm {{$usr->status ? 'btn-danger' : 'btn-success'}}">{{$usr->status ? 'Non Aktifkan User' : 'Aktifkan User'}}</a>
            </td>
          </tr>
-
+         <div class="modal modal-info fade bs-modal-md-info{{$usr->id}}" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel2" aria-hidden="true" style="display: none">
+              <div class="modal-dialog modal-md">
+                  <div class="modal-content">
+                      <div class="modal-header text-inverse {{$usr->status ? 'bg-danger' : 'bg-success'}}">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          <h5 class="modal-title">{{$usr->status ? 'Non Aktifkan User' : 'Aktifkan User'}}</h5>
+                      </div>
+                      <form class="" action="{{route('user.update', $usr)}}" method="post">
+                        @csrf
+                        @method('PATCH')
+                      <div class="modal-body">
+                        Apakah anda yakin akan {{$usr->status ? 'Non Aktifkan User' : 'Aktifkan User'}} {{$usr->nama}}
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary btn-rounded ripple text-left" data-dismiss="modal">Batal</button>
+                          <button type="submit" class="btn {{$usr->status ? 'bg-danger' : 'bg-success'}} btn-rounded text-white ripple text-left">Simpan</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+          </div>
 @endforeach
       </tbody>
     </table>

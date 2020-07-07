@@ -92,8 +92,10 @@ Route::group(['prefix' => 'dampak-negatif'], function(){
 
 //users
 Route::get('/user', 'UserController@index')->name('user.index');
+Route::patch('/user/update/{user}', 'UserController@update')->name('user.update');
 
  //
 
  Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
  Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
+ Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');

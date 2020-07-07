@@ -31,7 +31,7 @@
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
            <th>{{$lp->tmpt_transaksi}}</th>
-           <th>{{$lp->status}}</th>
+           <th>{{$lp->status ? 'Terkonfirmasi' : 'Belum Terkonfirmasi'}}</th>
            <td>
              <a href="#"></a>
               <a href="{{ route('lihat_laporan.index', $lp->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
