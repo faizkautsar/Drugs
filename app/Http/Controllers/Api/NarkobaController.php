@@ -9,7 +9,7 @@ use App\Narkotika;
 use App\Psikotropika;
 use App\Bhn_adiktif;
 use App\Pencegahan;
-use App\Bahaya;
+
 use App\Hukum;
 use App\Statistik;
 use Carbon\Carbon;
@@ -86,22 +86,4 @@ class NarkobaController extends Controller
       ]);
     }
 
-    public function statistik() {
-      $statistik = Statistik::all();
-      return response()->json([
-        'message' => 'Berhasil',
-        'status' => true,
-        'data' => $statistik
-      ]);
-    }
-
-    public function bahaya() {
-      $bahaya = Bahaya::all();
-
-      return response()->json([
-        'message' => 'Berhasil',
-        'status' => true,
-        'data' => $bahaya
-      ]);
-    }
 }

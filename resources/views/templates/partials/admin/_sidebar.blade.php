@@ -10,10 +10,8 @@
                       <a href="{{route('rehabilitasi.index')}}">Rehabilitasi</a>
                     </li>
                   </li>
-                  
+
                     <li><a href="{{route('hukum.index')}}">Dasar Hukum</a>
-                    </li>
-                    <li><a href="{{route('dampak.index')}}">Dampak Negatif</a>
                     </li>
                     <li><a href="{{route('pencegahan.index')}}">Upaya Pencegahan</a>
                     </li>
