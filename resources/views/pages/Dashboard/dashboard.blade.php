@@ -9,7 +9,7 @@
                   <header class="align-self-center"><a href="{{route('rehabilitasi.index')}}" class="bg-grey fs-30 text-muted"><i class="lnr lnr-database icon-lg"></i></a>
                   </header>
                   <section class="mt-0">
-                      <h6 class="icon-box-title my-0">$<span class="counter" id="counter-1">{{count($rehabilitasi)}}</span></h6>
+                      <h6 class="icon-box-title my-0"><span class="counter" id="counter-1">{{count($rehabilitasi)}}</span></h6>
                       <p class="mb-0">Rehabilitasi</p>
                   </section>
               </div>
