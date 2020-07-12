@@ -82,6 +82,8 @@ class PesanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $laporan = Laporan::find($id);
+        $laporan->delete();
+        return redirect()->route('laporan.index');
     }
 }

@@ -27,7 +27,7 @@
            <td>{{$lp->id}}</td>
            <th>{{$lp->peran}}</th>
            <th>{{$lp->nama}}</th>
-           <th>{{$lp->alamat}}</th>
+           <th>{!!str_limit($lp->alamat, 30, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
            <th>{{$lp->tmpt_transaksi}}</th>
@@ -35,6 +35,9 @@
            <td>
              <a href="#"></a>
               <a href="{{ route('lihat_laporan.index', $lp->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
+              <a href="{{route('laporan.hapus', $lp->id)}}" onclick="return confirm('Apakah Anda Yakin Ingin Dihapus?')"
+                class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
+
            </td>
          </tr>
 
