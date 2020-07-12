@@ -27,7 +27,7 @@
            <td>{{$lp->id}}</td>
            <th>{{$lp->peran}}</th>
            <th>{{$lp->nama}}</th>
-           <th>{!!str_limit($lp->alamat, 30, '...')!!}</th>
+           <th>{!!str_limit($lp->alamat, 20, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
            <th>{{$lp->tmpt_transaksi}}</th>
