@@ -30,7 +30,7 @@
            <th>{!!str_limit($lp->alamat, 20, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
-           <th>{{$lp->tmpt_transaksi}}</th>
+           <th>{!!str_limit($lp->tmpt_transaksi, 10, '...')!!}</th>
            <th>{{$lp->status ? 'Terkonfirmasi' : 'Belum Terkonfirmasi'}}</th>
            <td>
              <a href="#"></a>
