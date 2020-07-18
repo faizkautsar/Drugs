@@ -7,15 +7,11 @@ use Illuminate\Http\Request;
 
 class KaryawanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
      public function __construct(){
        $this->middleware('auth:admin');
      }
-     
+
     public function index()
     {
         $karyawan = Karyawan::all();
@@ -66,23 +62,6 @@ class KaryawanController extends Controller
         return redirect()->route("karyawan.index");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
-    public function show(cr $cr)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
       $karyawan = Karyawan::findOrFail($id);
@@ -90,13 +69,6 @@ class KaryawanController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
       $this->validate($request,[
@@ -125,12 +97,6 @@ class KaryawanController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\cr  $cr
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(cr $cr)
     {
         //

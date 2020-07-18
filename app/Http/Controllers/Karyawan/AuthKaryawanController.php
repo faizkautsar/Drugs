@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Karyawan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Karyawan;
 use Auth;
+use App\Karyawan;
 
 class AuthKaryawanController extends Controller
 {
