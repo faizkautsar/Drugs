@@ -41,6 +41,11 @@ return [
             'provider' => 'admins',
         ],
 
+        'karyawan' => [
+            'driver' => 'session',
+            'provider' => 'karyawans',
+        ],
+
         'user' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -81,6 +86,11 @@ return [
             'model' => App\Admin::class,
         ],
 
+        'karyawans' => [
+            'driver' => 'eloquent',
+            'model' => App\karyawan::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -110,6 +120,12 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'karyawans' => [
+            'provider' => 'karyawans',
             'table' => 'password_resets',
             'expire' => 60,
         ],

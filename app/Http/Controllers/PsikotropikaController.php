@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 
 class PsikotropikaController extends Controller
 {
+
   public function _construct()
   {
-    $this->middleware('auth');
+    $this->middleware('guest:karyawan')->except('logout');
   }
-    /**
+  /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,7 +20,7 @@ class PsikotropikaController extends Controller
     public function index()
     {
        $psikotropika = Psikotropika::all();
-        return View('pages.Narkoba.Psikotropika.ps-index', compact('psikotropika'));
+        return View('pages.Admin2.Narkoba.Psikotropika.ps-index', compact('psikotropika'));
     }
 
     /**
@@ -29,7 +30,7 @@ class PsikotropikaController extends Controller
      */
     public function create()
     {
-        return view('pages.Narkoba.Psikotropika.ps-tambah');
+        return view('pages.Admin2.Narkoba.Psikotropika.ps-tambah');
     }
 
     /**
@@ -73,7 +74,7 @@ class PsikotropikaController extends Controller
     public function show($id)
     {
       $psikotropika = Psikotropika::find($id);
-      return view ('pages.Narkoba.Psikotropika.ps-lihat', compact('psikotropika'));
+      return view ('pages.Admin2.Narkoba.Psikotropika.ps-lihat', compact('psikotropika'));
     }
 
     /**
@@ -85,7 +86,7 @@ class PsikotropikaController extends Controller
     public function edit($id)
     {
         $psikotropika = Psikotropika::findOrFail($id);
-        return view('pages.Narkoba.Psikotropika.ps-ubah', compact('psikotropika'));
+        return view('pages.Admin2.Narkoba.Psikotropika.ps-ubah', compact('psikotropika'));
     }
 
     /**

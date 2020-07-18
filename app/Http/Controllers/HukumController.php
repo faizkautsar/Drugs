@@ -11,10 +11,16 @@ class HukumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
+     public function _construct()
+     {
+       $this->middleware('guest:karyawan')->except('logout');
+     }
+
     public function index()
     {
       $hukum = Hukum::all();
-      return view('pages.Hukum.dasarhukum', compact('hukum'));
+      return view('pages.Admin2.Hukum.dasarhukum', compact('hukum'));
     }
 
     /**
@@ -24,7 +30,7 @@ class HukumController extends Controller
      */
     public function create()
     {
-        return view('pages.Hukum.masukan');
+        return view('pages.Admin2.Hukum.masukan');
     }
 
     /**
@@ -63,7 +69,7 @@ class HukumController extends Controller
     public function edit($id)
     {
         $hukum = Hukum::find($id);
-        return view('pages.Hukum.ubah',compact('hukum'));
+        return view('pages.Admin2.Hukum.ubah',compact('hukum'));
     }
 
     /**

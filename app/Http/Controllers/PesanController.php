@@ -11,11 +11,15 @@ class PesanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function laporan()
-{
-    $laporan = Laporan::all();
-    return view ('pages.Lapor.pesan', compact('laporan'));
-}
+
+     public function __construct(){
+       $this->middleware('auth:admin');
+     }
+     
+    public function laporan(){
+      $laporan = Laporan::all();
+      return view ('pages.Admin1.Lapor.pesan', compact('laporan'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -47,7 +51,7 @@ class PesanController extends Controller
     public function show($id)
     {
       $laporan = Laporan::find($id);
-      return view ('pages.Lapor.laporan', compact('laporan'));
+      return view ('pages.Admin1.Lapor.laporan', compact('laporan'));
     }
 
     /**

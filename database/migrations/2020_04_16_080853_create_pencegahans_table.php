@@ -15,9 +15,11 @@ class CreatePencegahansTable extends Migration
     {
         Schema::create('pencegahans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_karyawan')->unsigned();
             $table->string('aspek','150');
             $table->text('keterangan');
             $table->timestamps();
+            $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
         });
     }
 

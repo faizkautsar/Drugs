@@ -14,30 +14,13 @@ class AuthAdminController extends Controller
      */
      public function _construct()
      {
-       $this->middleware('guest')->except('logout');
+       $this->middleware('guest:admin')->except('logout');
      }
 
-    public function index()
-    {
-
-        return view('auth.login');
-      }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index(){
+      return view('auth.login_admin');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function login(Request $request)
     {
         $admin = [
@@ -53,51 +36,7 @@ class AuthAdminController extends Controller
     public function logout()
     {
       Auth::logout();
-      return redirect('/');
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-    public function show($id)
-    {
-        //
+      return redirect('/admin/login');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

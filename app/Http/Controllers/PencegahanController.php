@@ -12,10 +12,16 @@ class PencegahanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function _construct()
+     {
+       $this->middleware('guest:karyawan')->except('logout');
+     }
+
     public function index()
     {
         $pencegahan = Pencegahan::all();
-        return view ('pages.Pencegahan.pencegahan', compact('pencegahan'));
+        return view ('pages.Admin2.Pencegahan.pencegahan', compact('pencegahan'));
     }
 
     /**
@@ -25,7 +31,7 @@ class PencegahanController extends Controller
      */
     public function create()
     {
-        return view('pages.Pencegahan.tambahkan');
+        return view('pages.Admin2.Pencegahan.tambahkan');
     }
 
     /**
@@ -64,7 +70,7 @@ class PencegahanController extends Controller
     public function edit($id)
     {
         $pencegahan = Pencegahan::find($id);
-        return view('pages.Pencegahan.ubah',compact('pencegahan'));
+        return view('pages.Admin2.Pencegahan.ubah',compact('pencegahan'));
     }
 
     /**

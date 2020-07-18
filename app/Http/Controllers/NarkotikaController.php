@@ -8,11 +8,15 @@ use Illuminate\Http\Request;
 class NarkotikaController extends Controller
 {
   
+  public function _construct()
+  {
+    $this->middleware('guest:karyawan')->except('logout');
+  }
 
     public function index()
     {
       $narkotika = Narkotika::all();
-      return view('pages.Narkoba.Narkotika.narkotika', compact('narkotika'));  //
+      return view('pages.Admin2.Narkoba.Narkotika.narkotika', compact('narkotika'));  //
     }
 
     /**
@@ -22,7 +26,7 @@ class NarkotikaController extends Controller
      */
     public function create()
     {
-      return view('pages.Narkoba.Narkotika.tambah');
+      return view('pages.Admin2.Narkoba.Narkotika.tambah');
 
     }
 
@@ -69,7 +73,7 @@ class NarkotikaController extends Controller
     public function show($id)
     {
         $narkotika = Narkotika::find($id);
-        return view ('pages.Narkoba.Narkotika.lihat', compact('narkotika'));
+        return view ('pages.Admin2.Narkoba.Narkotika.lihat', compact('narkotika'));
     }
 
     /**
@@ -81,7 +85,7 @@ class NarkotikaController extends Controller
     public function edit($id)
     {
       $narkotika = Narkotika::findOrFail($id);
-        return view('pages.Narkoba.Narkotika.ubah', compact('narkotika'));
+        return view('pages.Admin2.Narkoba.Narkotika.ubah', compact('narkotika'));
     }
 
     /**

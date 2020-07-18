@@ -86,4 +86,32 @@ class AuthUserController extends Controller
         'data' => (object) []
       ]);
     }
+    public function profile()
+    {
+      $user = Auth::user();
+      return response()->json([
+        'message' => 'berhasil',
+        'status' => true,
+        'data' => $user
+      ]);
+    }
+
+
+    public function profileUpdate(Request $request)
+    {
+      $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
+      Auth::user()->update([
+        'nama' => $request->nama,
+        'email' => $request->email,
+        'no_telp' => $request->no_telp,
+        'alamat' => $alamat,
+        ]);
+        $user = User::find(Auth::user()->id);
+        return response()->json([
+          'message' => 'berhasil',
+          'status' => true,
+          'data' => $user
+        ]);
+    }
+
 }

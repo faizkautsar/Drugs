@@ -15,12 +15,14 @@ class CreateBhnAdiktifsTable extends Migration
     {
         Schema::create('bhn_adiktifs', function (Blueprint $table) {
             $table->Increments('id');
+            $table->bigInteger('id_karyawan')->unsigned();
             $table->string('nama', '100');
             $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');
             $table->enum('status',['1', '0'])->default('1');
             $table->timestamps();
+            $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
         });
     }
 

@@ -15,6 +15,7 @@ class CreateNarkotikasTable extends Migration
     {
         Schema::create('narkotikas', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('id_karyawan')->unsigned();
             $table->string('nama', '100');
             $table->string('jenis', '100');
             $table->string('golongan', '50');
@@ -23,6 +24,8 @@ class CreateNarkotikasTable extends Migration
             $table->text('gambar');
             $table->enum('status',['1', '0'])->default('1');
             $table->timestamps();
+
+            $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
         });
     }
 

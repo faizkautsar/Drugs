@@ -12,10 +12,17 @@ class BhnAdiktifController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
+     public function _construct()
+     {
+       $this->middleware('guest:karyawan')->except('logout');
+     }
+
+
     public function index()
     {
       $bhn_adiktif = Bhn_adiktif::all();
-      return view ('pages.Narkoba.Bhn-adiktif.bhn-adiktif', compact('bhn_adiktif'));
+      return view ('pages.Admin2.Narkoba.Bhn-adiktif.bhn-adiktif', compact('bhn_adiktif'));
     }
 
     /**
@@ -25,7 +32,7 @@ class BhnAdiktifController extends Controller
      */
     public function create()
     {
-        return view('pages.Narkoba.Bhn-adiktif.tambah');
+        return view('pages.Admin2.Narkoba.Bhn-adiktif.tambah');
     }
 
     /**
@@ -67,7 +74,7 @@ class BhnAdiktifController extends Controller
     public function show($id)
     {
       $bhn_adiktif = Bhn_adiktif::find($id);
-        return View('pages.Narkoba.Bhn-adiktif.lihat',compact('bhn_adiktif'));
+        return View('pages.Admin2.Narkoba.Bhn-adiktif.lihat',compact('bhn_adiktif'));
     }
 
     /**
@@ -79,7 +86,7 @@ class BhnAdiktifController extends Controller
     public function edit($id)
     {
         $bhn_adiktif = Bhn_adiktif::findOrFail($id);
-        return view('pages.Narkoba.Bhn-adiktif.ubah', compact('bhn_adiktif'));
+        return view('pages.Admin2.Narkoba.Bhn-adiktif.ubah', compact('bhn_adiktif'));
     }
 
     /**

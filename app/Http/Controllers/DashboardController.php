@@ -19,7 +19,7 @@ class DashboardController extends Controller
       $laporan = Laporan::all();
       $user = User::all();
       $rehabilitasi = Rehabilitasi::all();
-    return View('pages.Dashboard.dashboard', compact('laporan','user','rehabilitasi'));
+    return View('pages.Admin1.Dashboard.dashboard', compact('laporan','user','rehabilitasi'));
     }
 
   }
