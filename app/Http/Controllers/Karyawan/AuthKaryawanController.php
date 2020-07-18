@@ -24,7 +24,7 @@ class AuthKaryawanController extends Controller
 
   public function login(Request $request)
   {
-    dd($request->all());
+    // dd($request->all());
       $karyawan = [
         'email' => $request->email,
         'password' => $request->password,
