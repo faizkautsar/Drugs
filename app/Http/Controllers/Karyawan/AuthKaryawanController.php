@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Karyawan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Karyawan;
 use Auth;
 
 class AuthKaryawanController extends Controller
@@ -25,10 +24,12 @@ class AuthKaryawanController extends Controller
 
   public function login(Request $request)
   {
+    dd($request->all());
       $karyawan = [
         'email' => $request->email,
         'password' => $request->password,
       ];
+
       if(Auth::guard('karyawan')->attempt($karyawan, $request->remember)){
         return redirect()->route('narkotika.index');
       }

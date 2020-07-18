@@ -51,7 +51,7 @@ Route::get('/admin', 'DashboardController@index')->name('dash.index');
 });
 Route::group(['prefix' => 'karyawan'], function(){
 Route::get('/login', 'Karyawan\AuthKaryawanController@index')->name('karyawan.login');
-// Route::post('/login','Karyawan\AuthKaryawanController@login')->name('karyawan.to.login');
+Route::post('/login','Karyawan\AuthKaryawanController@login')->name('karyawan.to.login');
 Route::get('/logout', 'Karyawan\AuthKaryawanController@logout')->name('karyawan.logout');
 
 
