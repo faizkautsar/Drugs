@@ -16,6 +16,7 @@ class CreateLaporansTable extends Migration
         Schema::create('laporans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('peran');
+            $table->text('foto');
             $table->string('nama');
             $table->char('no_telp');
             $table->text('alamat');

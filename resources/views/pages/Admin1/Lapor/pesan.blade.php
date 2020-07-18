@@ -2,7 +2,11 @@
 @section('content')
 <div class="widget-body">
   <h5 class="box-title">Laporan</h5>
-<a href="#" class="btn btn-info">Download Laporan</a>
+  <div class="box">
+    <div class="box-header with-border">
+
+    </div>
+
 </div>
 <div class="row">
   <div class="col-12">
@@ -10,12 +14,14 @@
           <thead>
            <tr>
             <th>NO</th>
+            <th>Foto</th>
             <th>Peran</th>
             <th>Nama </th>
             <th>Alamat </th>
             <th>Jenis Narkoba</th>
             <th>Pekerjaan</th>
             <th>Transaksi</th>
+            <th>Tanggal</th>
             <th>Status</th>
             <th>Aksi</th>
 
@@ -25,12 +31,14 @@
             @foreach($laporan as $lp)
             <tr>
            <td>{{$lp->id}}</td>
-           <th>{{$lp->inisial}}</th>
+           <td><img src="{{asset('uploads/laporan'.$lp->foto)}}" width="100" height="100"  </td>
+           <th>{{$lp->peran}}</th>
            <th>{{$lp->nama}}</th>
            <th>{!!str_limit($lp->alamat, 20, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
            <th>{{$lp->pekerjaan}}</th>
            <th>{!!str_limit($lp->tmpt_transaksi, 10, '...')!!}</th>
+           <th>{{$lp->created_at->format('d-m-Y')}}</th>
            <th>{{$lp->status ? 'Terkonfirmasi' : 'Belum Terkonfirmasi'}}</th>
            <td>
              <a href="#"></a>
@@ -41,9 +49,11 @@
            </td>
          </tr>
 
-@endforeach
+         @endforeach
       </tbody>
     </table>
+
+  
   </div>
 </div>
 @endsection

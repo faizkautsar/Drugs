@@ -37,6 +37,8 @@ class AuthUserController extends Controller
       ];
 
       $this->validate($request, $rule, $message);
+
+
       $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
       $user = User::create([
         'nama' => $request->nama,
@@ -44,6 +46,7 @@ class AuthUserController extends Controller
         'password' => bcrypt($request->password),
         'no_telp' => $request->no_telp,
         'alamat' => $alamat,
+        'foto' =>$foto,
         'api_token' => bcrypt($request->email),
       ]);
 
@@ -112,6 +115,25 @@ class AuthUserController extends Controller
           'status' => true,
           'data' => $user
         ]);
+    }
+
+    public function uploadFoto(Request $request){
+      $foto = $request->file('foto');
+      $filename = time().'.'. $foto->getClientOriginalExtension();
+      $tempatfile = public_path('uploads/user');
+      $foto->move($tempatfile, $filename);
+
+      Auth::user()->update([
+        'foto' => $foto,
+        ]);
+
+        $user = User::find(Auth::user()->id);
+        return response()->json([
+          'message' => 'berhasil',
+          'status' => true,
+          'data' => $user
+        ]);
+
     }
 
 }

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('no_telp',13)->unique();
             $table->text('alamat');
+            $table->text('foto')->nullable();
             $table->string('api_token');
             $table->boolean('status')->default(true);
             $table->timestamps();
