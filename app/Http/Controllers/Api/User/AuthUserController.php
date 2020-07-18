@@ -46,7 +46,7 @@ class AuthUserController extends Controller
         'password' => bcrypt($request->password),
         'no_telp' => $request->no_telp,
         'alamat' => $alamat,
-        'foto' =>$foto,
+        
         'api_token' => bcrypt($request->email),
       ]);
 
