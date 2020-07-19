@@ -39,4 +39,23 @@ class PesanController extends Controller
       $laporan = Laporan::all();
       return view('pages.Admin1.Lapor.pdf', compact('laporan'));
     }
+
+
+    public function laporan_pdf()
+    {
+      global $laporan;
+        $laporan = Laporan::where('created_at','true')->orderBy('updated_at','DESC')->paginate(20);
+        $start_date = $request->get('start_date');
+        $end_date = $request->get('end_date');
+        if ($start_date !="" && $end_date !="") {
+            # code...
+            $laporan=Laporan::whereBetween('updated_at',[$start_date,$end_date])->orderBy('updated_at','DESC')->where('created_at','1')->paginate(20);
+            $start_date = \Carbon\Carbon::parse($start_date)->format('d-F-Y');
+            $end_date = \Carbon\Carbon::parse($end_date)->format('d-F-Y');
+
+        }
+        // $pdf =PDF::loadview('report_data.data_pdf',compact('report_data'));
+        // return $pdf->stream();
+        return view('pages.Admin1.Lapor.pilih_pdf',compact('laporan','start_date','end_date'));
+    }
 }

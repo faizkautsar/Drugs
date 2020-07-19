@@ -46,10 +46,7 @@ class PesanController extends Controller
 
       $this->validate($request, $rule, $message);
 
-      $foto = $request->file('foto');
-      $filename = time().'.'. $foto->getClientOriginalExtension();
-      $tempatfile = public_path('uploads/laporan');
-      $foto->move($tempatfile, $filename);
+      $foto = $request->file('foto')->store('uploads/user');
 
 
       $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;

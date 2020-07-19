@@ -20,7 +20,7 @@
             <tbody>
              @foreach($rehabilitasi as $r)
              <tr>
-             <td>{{$r->id}}</td>
+             <td>{{$loop->iteration}}</td>
              <td>{{$r->inisial}}</td>
              <td>{{$r->tanggal_lahir}}</td>
               <td>{{$r->keterangan}}</td>

@@ -19,6 +19,7 @@ class CreatePencegahansTable extends Migration
             $table->string('aspek','150');
             $table->text('keterangan');
             $table->timestamps();
+            
             $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
         });
     }

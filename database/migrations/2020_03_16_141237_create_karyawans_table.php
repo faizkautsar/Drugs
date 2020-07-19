@@ -22,6 +22,7 @@ class CreateKaryawansTable extends Migration
           $table->char('no_telp',13)->unique();
           $table->text('alamat');
           $table->boolean('status')->default(true);
+          
           $table->timestamps();
         });
     }

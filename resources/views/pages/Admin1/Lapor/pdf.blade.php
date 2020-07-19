@@ -41,7 +41,19 @@
         </tr>
     </thead>
     <tbody>
-
+      @foreach($laporan as $lapor)
+        <tr>
+          <td>{{$loop->iteration}}</td>
+          <th>{{$lapor->peran}}</th>
+          <th>{{$lapor->nama}}</th>
+          <th>{!!$lapor->alamat!!}</th>
+          <th>{{$lapor->jenis_narkoba}}</th>
+          <th>{{$lapor->pekerjaan}}</th>
+          <th>{!!$lapor->tmpt_transaksi!!}</th>
+          <th>{{$lapor->kendaraan}}</th>
+          <th>{{$lapor->user->nama}}</th>
+        </tr>
+      @endforeach
     </tbody>
 </table>
 <table align=right border="0" cellpadding="1" style="width: 250px;">

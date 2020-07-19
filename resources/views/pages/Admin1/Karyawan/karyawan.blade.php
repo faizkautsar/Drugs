@@ -22,7 +22,7 @@
           <tbody>
             @foreach($karyawan as $kw)
             <tr>
-           <td>{{$kw->id}}</td>
+           <td>{{$loop->iteration}}</td>
            <th>{{$kw->nama}}</th>
            <th>{{$kw->ttl}}</th>
            <th>{{$kw->email}}</th>

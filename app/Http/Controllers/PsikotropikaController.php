@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Psikotropika;
 use Illuminate\Http\Request;
-
+use Auth;
 class PsikotropikaController extends Controller
 {
 
@@ -60,6 +60,7 @@ class PsikotropikaController extends Controller
         $psikotropika->dampak = $request->dampak;
         $psikotropika->keterangan = $request->keterangan;
         $psikotropika->gambar = $filename;
+        $psikotropika->id_karyawan = Auth::guard('karyawan')->user()->id;
         $psikotropika->save();
 
         return redirect()->route('ps.index');
@@ -122,6 +123,7 @@ class PsikotropikaController extends Controller
         $psikotropika->dampak = $request->dampak;
         $psikotropika->keterangan = $request->keterangan;
         $psikotropika->gambar = $filename;
+        $psikotropika->id_karyawan = Auth::guard('karyawan')->user()->id;
         $psikotropika->update();
 
 

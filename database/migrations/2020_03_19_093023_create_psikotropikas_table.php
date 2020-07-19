@@ -23,6 +23,7 @@ class CreatePsikotropikasTable extends Migration
             $table->text('gambar');
             $table->enum('status',['1', '0'])->default('1');
             $table->timestamps();
+            
             $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
         });
     }

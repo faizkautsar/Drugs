@@ -4,14 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Hukum;
+use Auth;
 class HukumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-     
      public function _construct()
      {
        $this->middleware('guest:karyawan')->except('logout');
@@ -44,6 +39,7 @@ class HukumController extends Controller
       $hukum= new Hukum();
       $hukum->keterangan = $request->keterangan;
       $hukum->isi =$request->isi;
+      $hukum->id_karyawan = Auth::guard('karyawan')->user()->id;
       $hukum->save();
 
       return redirect()->route('hukum.index');
@@ -90,6 +86,7 @@ class HukumController extends Controller
 
                 $hukum->keterangan =$request->keterangan;
                 $hukum->isi =$request->isi;
+                $hukum->id_karyawan = Auth::guard('karyawan')->user()->id;
                 $hukum->update();
 
                 return redirect()->route('hukum.index');

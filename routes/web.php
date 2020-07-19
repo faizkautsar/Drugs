@@ -9,9 +9,7 @@ Route::get('/admin', function () {
     return view('templates.admin');
 });
 
-Route::get('pdf', function(){
-  return view('pages.Admin1.Lapor.pdf');
-});
+Auth::routes(['verify' => true]);
 
 Route::get('/admin', 'DashboardController@index')->name('dash.index');
   Route::group(['prefix' => 'admin'], function(){
@@ -23,7 +21,9 @@ Route::get('/admin', 'DashboardController@index')->name('dash.index');
    Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
    Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');
    Route::get('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
+   Route::get('/laporan/pilih-pdf','PesanController@laporan_pdf')->name('pilih_laporan');
    Route::get('/laporan/pdf','PesanController@pdf')->name('cetak_pdf');
+
 
    //users
    Route::get('/user', 'UserController@index')->name('user.index');

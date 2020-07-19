@@ -16,7 +16,7 @@
             <tbody>
 
              @foreach($pencegahan as $up)
-             <td>{{$up->id}}</td>
+             <td>{{$loop->iteration}}</td>
              <td>{{str_limit($up->aspek,60, '...')}}</td>
              <td>{{str_limit($up->keterangan,60,'...')}}</td>
              <td>

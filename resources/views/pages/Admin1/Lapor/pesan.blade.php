@@ -6,8 +6,24 @@
     <div class="box-header with-border">
 
     </div>
-
 </div>
+
+<form class="" action="index.html" method="post">
+  <div class="row">
+    <div class="col-3">
+      <input type="date" class="form-control" name="" value="">
+    </div>
+
+    <div class="col-3">
+      <input type="date" class="form-control" name="" value="">
+    </div>
+
+    <div class="col-3">
+      <button type="button" onclick="window.location='{{url('admin/laporan/pdf')}}'" class="btn btn-primary" name="button"> <i class="fa fa-print"></i> </button>
+    </div>
+  </div>
+</form>
+
 <div class="row">
   <div class="col-12">
     <table class="table table-bordered " id="myTable">
@@ -30,7 +46,7 @@
           <tbody>
             @foreach($laporan as $lp)
             <tr>
-           <td>{{$lp->id}}</td>
+           <td>{{$loop->iteration}}</td>
            <td><img src="{{asset('uploads/laporan'.$lp->foto)}}" width="100" height="100"  </td>
            <th>{{$lp->peran}}</th>
            <th>{{$lp->nama}}</th>
@@ -53,7 +69,7 @@
       </tbody>
     </table>
 
-  
+
   </div>
 </div>
 @endsection

@@ -19,7 +19,9 @@ class Hukum extends Migration
           $table->text('keterangan');
           $table->text('isi');
           $table->timestamps();
+          
           $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
+
       });
     }
 

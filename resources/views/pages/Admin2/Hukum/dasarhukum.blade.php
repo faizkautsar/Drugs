@@ -15,7 +15,7 @@
             </thead>
             <tbody>
              @foreach($hukum as $h)
-             <td>{{$h->id}}</td>
+             <td>{{$loop->iteration}}</td>
              <td>{!!str_limit($h->keterangan,60, '...')!!}</td>
              <td>{!!str_limit($h->isi,60,'...')!!}</td>
              <td>

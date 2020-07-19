@@ -22,7 +22,7 @@
           <tbody>
           @foreach($narkotika as $n_dt)
            <tr>
-           <td>{{$n_dt->id}}</td>
+           <td>{{$loop->iteration}}</td>
            <td>{{$n_dt->nama}}</td>
            <td>{{$n_dt->jenis == 'nss' ? 'Narkotika Semi Sensitis' : 'Narkotika'}}</td>
             <td>{{$n_dt->golongan}}</td>

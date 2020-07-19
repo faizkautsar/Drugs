@@ -21,7 +21,7 @@
             <tbody>
              @foreach($psikotropika as $ps)
              <tr>
-             <td>{{$ps->id}}</td>
+             <td>{{$loop->iteration}}</td>
              <td>{{$ps->nama}}</td>
               <td>{{$ps->golongan}}</td>
               <td>{!!str_limit($ps->dampak, 50, '...')!!}</td>

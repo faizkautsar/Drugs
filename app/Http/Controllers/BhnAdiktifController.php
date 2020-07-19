@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bhn_adiktif;
 use Illuminate\Http\Request;
-
+use Auth;
 class BhnAdiktifController extends Controller
 {
     /**
@@ -12,10 +12,10 @@ class BhnAdiktifController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     
+
      public function _construct()
      {
-       $this->middleware('guest:karyawan')->except('logout');
+       $this->middleware('guest:karyawan')->except('logout');;
      }
 
 
@@ -60,6 +60,7 @@ class BhnAdiktifController extends Controller
         $bhn_adiktif->dampak = $request->dampak;
         $bhn_adiktif->keterangan = $request->keterangan;
         $bhn_adiktif->gambar = $namafile;
+        $bhn_adiktif->id_karyawan = Auth::guard('karyawan')->user()->id;
         $bhn_adiktif->save();
 
         return redirect()->route('bhn_adiktif.index');
@@ -120,6 +121,7 @@ class BhnAdiktifController extends Controller
         $bhn_adiktif->dampak =$request->dampak;
         $bhn_adiktif->keterangan =$request->keterangan;
         $bhn_adiktif->gambar = $namafile;
+        $bhn_adiktif->id_karyawan = Auth::guard('karyawan')->user()->id;
         $bhn_adiktif->update();
 
         return redirect()->route('bhn_adiktif.index');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pencegahan;
 use Illuminate\Http\Request;
+use Auth;
 
 class PencegahanController extends Controller
 {
@@ -45,6 +46,7 @@ class PencegahanController extends Controller
         $pencegahan = new Pencegahan();
         $pencegahan->aspek = $request->aspek;
         $pencegahan->keterangan = $request->keterangan;
+        $pencegahan->id_karyawan = Auth::guard('karyawan')->user()->id;
         $pencegahan->save();
 
         return redirect()->route('pencegahan.index');
@@ -89,6 +91,7 @@ class PencegahanController extends Controller
         $pencegahan = Pencegahan::find($id);
         $pencegahan->aspek = $request->aspek;
         $pencegahan->keterangan = $request->keterangan;
+        $pencegahan->id_karyawan = Auth::guard('karyawan')->user()->id;
         $pencegahan->update();
 
         return redirect()->route('pencegahan.index');

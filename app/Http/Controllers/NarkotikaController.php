@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Narkotika;
 use Illuminate\Http\Request;
+use Auth;
 
 class NarkotikaController extends Controller
 {
-  
+
   public function _construct()
   {
-    $this->middleware('guest:karyawan')->except('logout');
+    $this->middleware('guest:karyawan')->except('logout');;
   }
 
     public function index()
@@ -58,6 +59,8 @@ class NarkotikaController extends Controller
         $narkotika->dampak = $request->dampak;
         $narkotika->keterangan = $request->keterangan;
         $narkotika->gambar = $filename;
+        $narkotika->id_karyawan = Auth::guard('karyawan')->user()->id;
+
         $narkotika->save();
 
 
@@ -124,6 +127,7 @@ class NarkotikaController extends Controller
           $narkotika->dampak = $request->dampak;
           $narkotika->keterangan = $request->keterangan;
           $narkotika->gambar = $filename ;
+          $narkotika->id_karyawan = Auth::guard('karyawan')->user()->id;
           $narkotika->update();
 
 

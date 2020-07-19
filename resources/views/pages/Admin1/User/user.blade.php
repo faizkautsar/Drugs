@@ -21,7 +21,7 @@
           <tbody>
             @foreach($user as $usr)
             <tr>
-           <td>{{$usr->id}}</td>
+           <td>{{$loop->iteration}}</td>
            <th>{{$usr->nama}}</th>
            <th>{{$usr->email}}</th>
            <th>{{$usr->no_telp}}</th>

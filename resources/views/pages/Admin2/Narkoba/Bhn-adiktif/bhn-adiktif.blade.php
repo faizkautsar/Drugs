@@ -20,7 +20,7 @@
           <tbody>
             @foreach($bhn_adiktif as $bhn_a)
             <tr>
-              <td>{{$bhn_a->id}}</td>
+              <td>{{$loop->iteration}}</td>
               <td>{{$bhn_a->nama}}</td>
               <td>{!!str_limit($bhn_a->dampak, 45, '...')!!}</td>
               <td>{!!str_limit($bhn_a->keterangan, 45, '...')!!}</td>

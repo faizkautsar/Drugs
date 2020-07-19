@@ -46,10 +46,10 @@ class AuthUserController extends Controller
         'password' => bcrypt($request->password),
         'no_telp' => $request->no_telp,
         'alamat' => $alamat,
-        
+
         'api_token' => bcrypt($request->email),
       ]);
-
+      $user->sendApiEmailVerificationNotification();
       return response()->json([
         'message' => 'registrasi berhasil',
         'status' => true,
@@ -118,10 +118,7 @@ class AuthUserController extends Controller
     }
 
     public function uploadFoto(Request $request){
-      $foto = $request->file('foto');
-      $filename = time().'.'. $foto->getClientOriginalExtension();
-      $tempatfile = public_path('uploads/user');
-      $foto->move($tempatfile, $filename);
+      $foto = $request->file('foto')->store('uploads/user');
 
       Auth::user()->update([
         'foto' => $foto,
