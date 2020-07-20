@@ -102,10 +102,9 @@ class AuthUserController extends Controller
 
     public function profileUpdate(Request $request)
     {
-      $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
+      $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;
       Auth::user()->update([
         'nama' => $request->nama,
-        'email' => $request->email,
         'no_telp' => $request->no_telp,
         'alamat' => $alamat,
         ]);
