@@ -105,7 +105,22 @@ class AuthUserController extends Controller
 
     public function profileUpdate(Request $request)
     {
-      Auth::user()->update([
+      $user = Auth::user();
+      $rule = [
+        'no_telp' => 'required|unique:users,no_telp,'.$user->id,
+        // 'foto' => 'image|max:1024|mimes:jpg,png,jpeg',
+      ];
+
+      $message = [
+        'required' => ':attribute tidak boleh kosong.',
+        'min' => 'terlaku pendek',
+        'max' => 'dengan benar',
+        'no_telp.unique' => 'No Telepon sudah terdaftar'
+      ];
+
+      $this->validate($request, $rule, $message);
+
+      $user->update([
         'nama' => $request->nama,
         'no_telp' => $request->no_telp,
         'jalan' => $request->jalan,
@@ -113,6 +128,7 @@ class AuthUserController extends Controller
         'kecamatan' => $request->kecamatan,
         'kota' => $request->kota,
         ]);
+
         $user = User::find(Auth::user()->id);
         return response()->json([
           'message' => 'berhasil',
