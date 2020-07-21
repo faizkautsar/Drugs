@@ -25,7 +25,7 @@
            <th>{{$usr->nama}}</th>
            <th>{{$usr->email}}</th>
            <th>{{$usr->no_telp}}</th>
-           <th>{{$usr->alamat}}</th>
+           <th>{{$usr->jalan}}</th>
            <td>
              <button type="button" class="btn {{$usr->status ? 'btn-success' : 'btn-danger'}} btn-sm">{{$usr->status ? 'Aktif' : 'Tidak aktif'}}</button>
            </td>

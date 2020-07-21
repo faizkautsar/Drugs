@@ -39,13 +39,16 @@ class AuthUserController extends Controller
       $this->validate($request, $rule, $message);
 
 
-      $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;
+
       $user = User::create([
         'nama' => $request->nama,
         'email' => $request->email,
         'password' => bcrypt($request->password),
         'no_telp' => $request->no_telp,
-        'alamat' => $alamat,
+        'jalan' => $request->jalan,
+        'desa' => $request->desa,
+        'kecamatan' =>$request->kecamatan,
+        'kota' =>$request->kota,
 
         'api_token' => bcrypt($request->email),
       ]);
@@ -102,11 +105,13 @@ class AuthUserController extends Controller
 
     public function profileUpdate(Request $request)
     {
-      $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;
       Auth::user()->update([
         'nama' => $request->nama,
         'no_telp' => $request->no_telp,
-        'alamat' => $alamat,
+        'jalan' => $request->jalan,
+        'desa' => $request->desa,
+        'kecamatan' => $request->kecamatan,
+        'kota' => $request->kota,
         ]);
         $user = User::find(Auth::user()->id);
         return response()->json([

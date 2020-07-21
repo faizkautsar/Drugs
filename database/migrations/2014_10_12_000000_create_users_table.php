@@ -20,7 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->char('no_telp',13)->unique();
-            $table->text('alamat');
+            $table->string('jalan');
+            $table->string('desa');
+            $table->string('kecamatan');
+            $table->string('kota');
             $table->text('foto')->nullable();
             $table->string('api_token');
             $table->boolean('status')->default(true);
