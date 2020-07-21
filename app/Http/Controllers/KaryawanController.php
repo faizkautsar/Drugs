@@ -40,8 +40,8 @@ class KaryawanController extends Controller
         'nama' => 'required',
         'tempat' => 'required',
         'tanggal' => 'required',
-        'email' => 'required',
-        'no_telp'=>'required',
+        'email' => 'required|email|unique:karyawans',
+        'no_telp'=>'required|unique:karyawans|numeric|digits_between:11,13',
         'alamat' =>'required',
        ]);
 

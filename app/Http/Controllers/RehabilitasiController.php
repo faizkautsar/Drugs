@@ -38,7 +38,7 @@ class RehabilitasiController extends Controller
     {
 
           $this->validate($request,[
-            'nama_lengkap'=>'required',
+            'nama_lengkap'=>'required|unique:rehabilitasis',
             'rujukan'=> 'required'
           ]);
 

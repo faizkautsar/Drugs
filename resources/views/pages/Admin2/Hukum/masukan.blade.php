@@ -9,17 +9,22 @@
         <label class="col-md-3 col-form-label" for="l0">Keterangan</label>
         <div class="col-md-9">
           <input class="form-control"
-          name="keterangan"  placeholder="pasal" type="text" >
+          name="keterangan"  placeholder="Pasal" type="text" >
           </div>
       </div>
-     <div class="form-group row">
+
+            <div class="form-group row">
               <label class="col-md-3 col-form-label" for="l0">Isi</label>
               <div class="col-md-9">
-                <textarea class="form-control"
-                name="isi" id="basic-1" placeholder="isi" type="text"></textarea>
-                </div>
-      </div>
-        <div class="form-actions">
+                <input class="form-control {{$errors->has('isi')?'is-invalid':''}}"
+                name="isi" placeholder="isi" type="text" value="{{old('isi')}}">
+                @if ($errors->has('isi'))
+                  <span class="invalid-feedback" role="alert">
+                    <p><b>{{ $errors->first('isi') }}</b></p>
+                  </span>
+                @endif
+              </div>
+            </div>    <div class="form-actions">
             <div class="form-group row">
                 <div class="col-md-9 ml-md-auto btn-list">
                     <button class="btn btn-primary btn-rounded" type="submit">Simpan</button>

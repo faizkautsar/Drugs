@@ -39,7 +39,7 @@ class AuthUserController extends Controller
       $this->validate($request, $rule, $message);
 
 
-      $alamat = $request->kota.', '.$request->kecamatan.', '.$request->desa.', '.$request->jalan;
+      $alamat = $request->jalan.', '.$request->desa.', '.$request->kecamatan.', '.$request->kota;
       $user = User::create([
         'nama' => $request->nama,
         'email' => $request->email,

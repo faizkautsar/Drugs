@@ -40,10 +40,10 @@ class NarkotikaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-          'nama' => 'required',
+          'nama' => 'required|unique:narkotikas',
           'dampak' => 'required',
           'keterangan' => 'required',
-          'gambar' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+          'gambar' => 'required|image|mimes:jpg,png,jpeg|max:2048|unique:narkotikas',
 
         ]);
 

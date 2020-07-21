@@ -43,6 +43,10 @@ class PencegahanController extends Controller
      */
     public function store(Request $request)
     {
+      $this->validate($request,[
+        'keterangan'=>'required|unique:pencegahans'
+
+      ]);
         $pencegahan = new Pencegahan();
         $pencegahan->aspek = $request->aspek;
         $pencegahan->keterangan = $request->keterangan;

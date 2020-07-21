@@ -1,4 +1,4 @@
-@extends('templates.admin2')
+@extends('templates.admin1')
 @section('content')
 <div class="widget-body clearfix">
   <h5 class="box-title mr-b-0">Menambakan  Rehabilitasi</h5>

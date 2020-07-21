@@ -43,10 +43,10 @@ class PsikotropikaController extends Controller
     {
       // dd($request->all());
         $this->validate($request,[
-          'nama'=>'required',
+          'nama'=>'required|unique:psikotropikas',
           'dampak'=>'required',
           'keterangan'=>'required',
-          'gambar'=>'required|image|mimes:jpg,png,jpeg|max:2048',
+          'gambar'=>'required|image|mimes:jpg,png,jpeg|max:2048|unique:psikotropikas',
         ]);
 
         $gambar = $request->file('gambar');

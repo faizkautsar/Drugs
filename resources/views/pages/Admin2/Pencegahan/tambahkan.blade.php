@@ -12,13 +12,19 @@
           name="aspek"  placeholder="Aspek" >
           </div>
       </div>
-     <div class="form-group row">
+
+            <div class="form-group row">
               <label class="col-md-3 col-form-label" for="l0">Keterangan</label>
               <div class="col-md-9">
-                  <textarea class="form-control "
-                  name="keterangan" value="keterangan" rows="3" id="basic-2" ></textarea>
-                  </div>
-      </div>
+                <input class="form-control {{$errors->has('email')?'is-invalid':''}}"
+                name="keterangan" placeholder="Keterangan" type="text" value="{{old('keterangan')}}">
+                @if ($errors->has('keterangan'))
+                  <span class="invalid-feedback" role="alert">
+                    <p><b>{{ $errors->first('keterangan') }}</b></p>
+                  </span>
+                @endif
+              </div>
+            </div>
         <div class="form-actions">
             <div class="form-group row">
                 <div class="col-md-9 ml-md-auto btn-list">

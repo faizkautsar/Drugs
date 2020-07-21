@@ -19,7 +19,7 @@ class PesanController extends Controller
       $rule = [
         'peran' => 'required',
         'nama' => 'required',
-        'no_telp' => 'required|numeric|digits_between:11,13',
+        'no_telp' => 'required|numeric|digits_between:11,13| unique:laporans',
         'jalan' => 'required',
         'desa' => 'required',
         'kecamatan' => 'required',
@@ -36,7 +36,7 @@ class PesanController extends Controller
         // 'nama.max' => 'Nama terlalu panjang',
         // 'email.unique' => 'Email sudah terdaftar',
         // 'password.min' => 'Password Terlalu Pendek',
-        // 'no_telp.unique' => 'No Telepon sudah terdaftar',
+        'no_telp.unique' => 'No Telepon sudah terdaftar',
       //   'alamat.min' => 'Alamat terlalu pendek',
       //   'desa.min' => 'Nama desa terlalu pendek',
       //   'kecamatan.min' => 'Nama kecamatan terlalu pendek',

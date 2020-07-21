@@ -44,10 +44,10 @@ class BhnAdiktifController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-          'nama'=> 'required',
+          'nama'=> 'required|unique:bhn_adiktifs',
           'dampak'=> 'required',
           'keterangan' => 'required',
-          'gambar' =>'required|image|mimes:jpg,png,jpeg|max:2048',
+          'gambar' =>'required|image|mimes:jpg,png,jpeg|max:2048|unique:bhn_adiktifs',
 
         ]);
         $gambar = $request->file('gambar');
