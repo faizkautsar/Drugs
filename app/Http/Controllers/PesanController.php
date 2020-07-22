@@ -49,8 +49,8 @@ class PesanController extends Controller
       }
 
       $pdf = PDF::loadview('pages.Admin1.Lapor.pdf',['laporan' => $laporan]);
-      
-      return $pdf->stream();
+
+      return $pdf->stream('laporan.pdf');
       // return $pdf->download('laporan-pdf');
       // return view('pages.Admin1.Lapor.pdf', compact('laporan'));
     }

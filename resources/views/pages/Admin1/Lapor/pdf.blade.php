@@ -63,12 +63,12 @@
 
                      <div align="left">
                         <span style="font-size: x-small;">Mengetahui </span><br>
-                            <span style="font-size: x-small;">Kepala Dinas Penduduk dan Pencatatan Sipil Kota Tegal</span>
+                            <span style="font-size: x-small;">Kepala Badan Narkotika Nasional Kota Tegal</span>
                     </div>
 
             <div align="left" style="margin: 50px "></div>
             <div align="left">
-                    <span style="font-size: 12px;">E.Sulyati Dra,M.pd.</span></div>
+                    <span style="font-size: 12px;">Drs. Igor Budi Margiono.</span></div>
             </td>
         </tr>
     </tbody>
