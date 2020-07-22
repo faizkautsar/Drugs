@@ -8,18 +8,18 @@
     </div>
 </div>
 
-<form class="" action="index.html" method="post">
+<form class="" action="{{route('cetak_pdf')}}" method="get">
   <div class="row">
     <div class="col-3">
-      <input type="date" class="form-control" name="" value="">
+      <input type="date" name="tanggal_mulai" class="form-control form-control-sm" value="">
     </div>
 
     <div class="col-3">
-      <input type="date" class="form-control" name="" value="">
+      <input type="date" name="tanggal_selesai" class="form-control form-control-sm" value="">
     </div>
 
     <div class="col-3">
-      <button type="button" onclick="window.location='{{url('admin/laporan/pdf')}}'" class="btn btn-primary" name="button"> <i class="fa fa-print"></i> </button>
+      <button type="submit" class="btn btn-primary" > <i class="fa fa-print"></i> </button>
     </div>
   </div>
 </form>

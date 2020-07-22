@@ -5,7 +5,7 @@
 </head>
 <table align="center">
     <tr>
-        <td><img src="{{asset('assets/img/Logo_bnn2.png')}}" width="70" height="70"></td>
+        <!-- <td><img src="{{asset('assets/img/Logo_bnn2.png')}}" width="70" height="70"></td> -->
         <td><center>
                 <font size="4">PEMERINTAH KOTA TEGAL</font><BR>
                 <font size="5"><b>BADAN NARKOTIKA NASIONAL KOTA TEGAL</b></font><BR>
