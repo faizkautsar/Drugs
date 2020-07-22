@@ -33,10 +33,8 @@
             <th>Peran</th>
             <th>Nama</th>
             <th>Alamat</th>
-            <th>Jenis Narkoba</th>
+            <th>Narkoba</th>
             <th>Pekerjaan</th>
-            <th>Transaksi</th>
-            <th>Kendaraan</th>
             <th>Pelapor</th>
         </tr>
     </thead>
@@ -49,8 +47,6 @@
           <th>{!!$lapor->alamat!!}</th>
           <th>{{$lapor->jenis_narkoba}}</th>
           <th>{{$lapor->pekerjaan}}</th>
-          <th>{!!$lapor->tmpt_transaksi!!}</th>
-          <th>{{$lapor->kendaraan}}</th>
           <th>{{$lapor->user->nama}}</th>
         </tr>
       @endforeach
@@ -62,7 +58,7 @@
              <td valign="top">
 
                      <div align="left">
-                        <span style="font-size: x-small;">Mengetahui </span><br>
+                        <span style="font-size: x-small ;">Mengetahui, </span><br>
                             <span style="font-size: x-small;">Kepala Badan Narkotika Nasional Kota Tegal</span>
                     </div>
 

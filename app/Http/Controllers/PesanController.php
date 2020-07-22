@@ -48,9 +48,9 @@ class PesanController extends Controller
         $laporan = Laporan::whereDate('created_at', $tanggal_mulai)->get();
       }
 
-      $pdf = PDF::loadview('pages.Admin1.Lapor.pdf',['laporan' => $laporan]);
-
-      return $pdf->stream('laporan.pdf');
+      $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])
+      ->loadview('pages.Admin1.Lapor.pdf',['laporan'=>$laporan]);
+      return $pdf->stream();
       // return $pdf->download('laporan-pdf');
       // return view('pages.Admin1.Lapor.pdf', compact('laporan'));
     }
