@@ -17,8 +17,8 @@ class CreateNarkotikasTable extends Migration
             $table->increments('id');
             $table->bigInteger('id_karyawan')->unsigned();
             $table->string('nama', '100');
-            $table->string('jenis', '100');
-            $table->string('golongan', '50');
+            $table->string('jenis', '50');
+            $table->string('golongan', '25');
             $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');

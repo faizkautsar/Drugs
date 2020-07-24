@@ -15,10 +15,10 @@ class CreateLaporansTable extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('peran');
+            $table->string('peran',20);
             $table->text('foto');
-            $table->string('nama');
-            $table->char('no_telp');
+            $table->string('nama',100);
+            $table->char('no_telp',13)->unique();
             $table->text('alamat');
             $table->string('jenis_narkoba');
             $table->string('pekerjaan');

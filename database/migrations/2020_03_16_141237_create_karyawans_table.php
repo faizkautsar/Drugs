@@ -15,14 +15,14 @@ class CreateKaryawansTable extends Migration
     {
         Schema::create('karyawans', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->string('nama');
+          $table->string('nama','100');
           $table->string('ttl');
           $table->string('email')->unique();
-          $table->string('password');
+          $table->string('password','20');
           $table->char('no_telp',13)->unique();
-          $table->text('alamat');
+          $table->text('alamat','100');
           $table->boolean('status')->default(true);
-          
+
           $table->timestamps();
         });
     }

@@ -16,10 +16,10 @@ class Hukum extends Migration
       Schema::create('hukums', function (Blueprint $table) {
           $table->Increments('id');
           $table->bigInteger('id_karyawan')->unsigned();
-          $table->text('keterangan');
+          $table->text('keterangan','100');
           $table->text('isi');
           $table->timestamps();
-          
+
           $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('CASCADE');
 
       });
