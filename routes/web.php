@@ -26,7 +26,6 @@ Route::get('/admin', 'DashboardController@index_admin')->name('dash.index');
    Route::patch('/karyawan/ubah/{id}', 'KaryawanController@update')->name('karyawan.update');
 
 
-
 // KARYAWAN
 });
 Route::group(['prefix' => 'karyawan'], function(){
@@ -43,7 +42,7 @@ Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.i
 Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');
 Route::get('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
 Route::get('/laporan/pdf','PesanController@pdf')->name('cetak_pdf');
-
+Route::get('laporan/notifikasi','PesanController@notifyLaporan');
 
 //users
 Route::get('/user', 'UserController@index')->name('user.index');

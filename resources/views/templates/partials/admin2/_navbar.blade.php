@@ -25,54 +25,28 @@
         <!- /.navbar-search -->
         <div class="spacer"></div>
         <!-- <!- Right Menu -->
-<!--
-  <ul class="nav navbar-nav d-none d-lg-flex ml-2 ml-0-rtl">
-      <li class="dropdown show">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-        <span><i class="list-icon lnr lnr-alarm"></i>
-          <span class="button-pulse bg-danger"></span>
-            </span>Messages</a>
-          <!- <div class="dropdown-menu dropdown-left dropdown-card animated flipInY show">
-              <div class="card">
-                  <header class="card-header d-flex justify-content-center align-items-center mb-0">
-                    <i class="lnr lnr-envelope fs-15 mr-2"></i>
-                    <span class="heading-font-family fw-400">New Messages</span>
-                  </header>
-                  <!- <ul class="card-body list-unstyled dropdown-list-group ps">
-                      <li>
-                        <a href="#" class="media">
-                          <span class="d-flex thumb-xs2 user-online">
-                        <img src="assets/demo/users/2.jpg" class="rounded-circle" alt=""> </span>
-                        <span class="media-body">
-                          <span class="heading-font-family media-heading">Steve Smith</span>
-                         <span class="media-content">commented on your photo</span>
-                       </span>
-                     </a>
-                      </li>
 
-                  <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
-                    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;">
-                    </div>
-                  </div>
-                  <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;">
-                    </div>
-                  </div>
-                </ul>
-                  <!- /.dropdown-list-group -->
-                  <!-- <footer class="card-footer text-center">
-                    <a href="javascript:void(0);" class="btn btn-link text-danger fs-12">See all messages</a>
-                  </footer> -->
-              <!-- </div>
-              <!- /.card -->
-          <!-- </div> -->
-          <!-- /.dropdown-menu -->
-      <!-- </li> -->
-      <!-- /.dropdown -->
-      <!-- <li><a href="javascript:void(0);" class="right-sidebar-toggle">
-        <span><i class="list-icon lnr lnr-users"></i> </span>Chat</a>
-      </li>
-  </ul> -->
+  <ul class="nav navbar-nav d-none d-lg-flex ml-2 ml-0-rtl">
+    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="list-icon lnr lnr-alarm"></i>
+      <span id="notify" class="button-pulse bg-danger" style="display: none"></span>
+    </span>Laporan</a>
+       <div class="dropdown-menu dropdown-left dropdown-card animated flipInY">
+           <div class="card">
+               <ul class="card-body list-unstyled dropdown-list-group" id="message-notify">
+
+               </ul>
+               <!-- /.dropdown-list-group -->
+               <footer class="card-footer text-center" id="footer-notify">
+                
+               </footer>
+           </div>
+           <!-- /.card -->
+       </div>
+       <!-- /.dropdown-menu -->
+   </li>
+   <!-- /.dropdown -->
+
+  </ul>
         <!-- /.navbar-right -->
         <!-- User Image with Dropdown -->
         <ul class="nav navbar-nav">

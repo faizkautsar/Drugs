@@ -27,6 +27,13 @@ class PesanController extends Controller
       return view ('pages.Admin2.Lapor.detail', compact('laporan'));
     }
 
+    public function notifyLaporan(){
+      $laporan = Laporan::with('user')->orderBy('created_at', 'DESC')->take(4)->get();
+      // dd($laporan);
+      return $laporan;
+      // return view ('pages.Admin2.Lapor.pesan', compact('laporan'));
+    }
+
     public function update(Laporan $laporan)
     {
         $laporan->update(['status' => !$laporan->status]);

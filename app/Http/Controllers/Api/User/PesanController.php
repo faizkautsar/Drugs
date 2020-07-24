@@ -65,12 +65,14 @@ class PesanController extends Controller
         'tmpt_transaksi' => $request->tmpt_transaksi,
         'id_user' => $user->id
       ]);
+      Auth::user()->sendNotifyKaryawan("laporan");
 
       return response()->json([
         'message' => 'success',
         'status' => true,
         'data' => (object) []
       ]);
+
     }else {
       return response()->json([
         'message' => 'Akun anda dinonaktifkan',

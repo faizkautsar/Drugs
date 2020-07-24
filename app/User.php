@@ -41,4 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new VerifyApiEmail());
     }
+
+    public function sendNotifyKaryawan($message){
+     return event(new Events\LaporanEvent($message));
+   }
 }
