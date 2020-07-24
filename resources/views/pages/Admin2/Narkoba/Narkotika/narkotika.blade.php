@@ -4,7 +4,7 @@
   <h5 class="box-title">Narkotika</h5>
 <a href="{{route('narkotika.tambah')}}" class="btn btn-info">Tambah</a>
 </div>
-<div class="row">
+<div class="rows">
   <div class="col-12">
     <table class="table table-bordered " id="myTable">
           <thead>

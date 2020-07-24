@@ -13,13 +13,20 @@ class DashboardController extends Controller
     $this->middleware('auth');
   }
 
-    public function index()
+    public function index_admin()
 
     {
       $laporan = Laporan::all();
       $user = User::all();
       $rehabilitasi = Rehabilitasi::all();
     return View('pages.Admin1.Dashboard.dashboard', compact('laporan','user','rehabilitasi'));
+    }
+    public function index_karyawan()
+    {
+      $laporan = Laporan::all();
+      $user = User::all();
+      $rehabilitasi = Rehabilitasi::all();
+      return View('pages.Admin2.Dashboard.dashboard', compact('laporan', 'user', 'rehabilitasi'));
     }
 
   }

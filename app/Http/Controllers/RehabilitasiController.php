@@ -7,15 +7,14 @@ use Illuminate\Http\Request;
 
 class RehabilitasiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  public function _construct()
+  {
+    $this->middleware('guest:karyawan')->except('logout');
+  }
     public function index()
     {
      $rehabilitasi= Rehabilitasi::all();
-     return view('pages.Admin1.Rehabilitasi.idx_rehabilitasi', compact('rehabilitasi'));
+     return view('pages.Admin2.Rehabilitasi.idx_rehabilitasi', compact('rehabilitasi'));
     }
 
     /**
@@ -25,7 +24,7 @@ class RehabilitasiController extends Controller
      */
     public function create()
     {
-      return view('pages.Admin1.Rehabilitasi.tambahkan');
+      return view('pages.Admin2.Rehabilitasi.tambahkan');
     }
 
     /**
@@ -58,7 +57,8 @@ class RehabilitasiController extends Controller
         $rehabilitasi->keterangan = $request->keterangan;
         $rehabilitasi->pekerjaan = $request->pekerjaan;
         $rehabilitasi->rujukan = $request->rujukan;
-        $rehabilitasi->save();
+        //$rehabilitasi->save();
+
 
         return redirect()->route('rehabilitasi.index');
 
@@ -82,7 +82,7 @@ class RehabilitasiController extends Controller
     public function edit($id)
     {
         $rehabilitasi = Rehabilitasi::find($id);
-        return view ('pages.Admin1.Rehabilitasi.ubah', compact('rehabilitasi'));
+        return view ('pages.Admin2.Rehabilitasi.ubah', compact('rehabilitasi'));
     }
 
     /**

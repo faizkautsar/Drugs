@@ -6,16 +6,7 @@
               <i class="list-icon lnr lnr-home"></i>
                <span class="hide-menu" >Dashboard</span></a>
                 <ul class="list-unstyled sub-menu">
-                    <li>
-                      <a href="{{route('rehabilitasi.index')}}">Rehabilitasi</a>
-                    </li>
-                  </li>
-                  <li>
-                      <a href="{{route('user.index')}}">User</a>
-                    </li>
-                    <li>
-                      <a href="{{route('laporan.index')}}">Laporan</a>
-                    </li>
+                  
 
                     <li>
                       <a href="{{route('karyawan.index')}}">Karyawan</a>

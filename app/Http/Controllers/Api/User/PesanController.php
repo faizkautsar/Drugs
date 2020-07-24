@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Api\User;
-
+use App\Http\Controllers\FirebaseController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\Laporan;
+use FCM;
+
 
 class PesanController extends Controller
 {
@@ -19,7 +21,7 @@ class PesanController extends Controller
       $rule = [
         'peran' => 'required',
         'nama' => 'required',
-        'no_telp' => 'required|numeric|digits_between:11,13| unique:laporans',
+        'no_telp' => 'required|numeric|digits_between:10,13| unique:laporans',
         'jalan' => 'required',
         'desa' => 'required',
         'kecamatan' => 'required',
@@ -77,4 +79,28 @@ class PesanController extends Controller
       ]);
     }
   }
+  public function confirmed($id)
+   {
+       $laporan = Laporan::findOrFail($id);
+
+       if ($laporan->status == '0'){
+           return response()->json([
+               'message' => 'Permintaan laporan tidak ditindak lanjuti, harap mengulang dengan jelas',
+               'status' => false
+           ]);
+       }else{
+           $laporan->update(['status' => '1']);
+           $token = $laporan->user->fcm_token;
+           $message = "Laporan anda telah sudah kami konfirmasi";
+           $sendNotif = new FirebaseController();
+           $sendNotif->sendNotificationFirebase($token, $message);
+
+           return response()->json([
+               'message' => 'successfully confirmed laporan',
+               'status' => true,
+               'data' => (object)[]
+           ]);
+       }
+   }
+
 }

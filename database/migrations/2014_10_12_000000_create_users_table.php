@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('kecamatan');
             $table->string('kota');
             $table->text('foto')->nullable();
+            $table->string('fcm_token')->nullable();
             $table->string('api_token');
             $table->boolean('status')->default(true);
             $table->timestamps();

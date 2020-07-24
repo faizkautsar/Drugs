@@ -15,7 +15,7 @@ class AuthUserController extends Controller
         'nama' => 'required|min:3|max:50',
         'email' => 'required|email|unique:users',
         'password'=>'required|min:6',
-        'no_telp' => 'required|numeric|unique:users|digits_between:11,13',
+        'no_telp' => 'required|numeric|unique:users|digits_between:10,13',
         'jalan' => 'required|min:5',
         'desa' => 'required|min:3',
         'kecamatan' => 'required|min:3|max:50',

@@ -31,7 +31,7 @@ class AuthKaryawanController extends Controller
       ];
 
       if(Auth::guard('karyawan')->attempt($karyawan, $request->remember)){
-        return redirect()->route('narkotika.index');
+        return redirect()->route('dash_karyawan');
       }
       return redirect()->back()->withInput($request->only('email','remember'));
   }

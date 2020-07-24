@@ -9,7 +9,6 @@ use App\Narkotika;
 use App\Psikotropika;
 use App\Bhn_adiktif;
 use App\Pencegahan;
-
 use App\Hukum;
 use App\Statistik;
 use Carbon\Carbon;

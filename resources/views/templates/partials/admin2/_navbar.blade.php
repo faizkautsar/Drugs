@@ -2,7 +2,7 @@
     <div class="container-fluid px-0 align-items-stretch">
         <!-- Logo Area -->
         <div class="navbar-header">
-            <a href="{{route('dash.index')}}" class="navbar-brand">
+            <a href="{{route('dash_karyawan')}}" class="navbar-brand">
                 <img class="logo-expand" height="60" alt="60" src="{{asset('assets/img/Logo_bnn2.png')}}">
 
             </a>

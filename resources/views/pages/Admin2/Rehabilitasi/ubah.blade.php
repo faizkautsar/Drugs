@@ -1,4 +1,4 @@
-@extends('templates.admin1')
+@extends('templates.admin2')
 @section('content')
 <div class="widget-body clearfix">
   <h5 class="box-title mr-b-0">Form Edit Bahan Adiktif</h5>

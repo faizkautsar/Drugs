@@ -4,8 +4,8 @@
   <h5 class="box-title">Bahan Adiktif</h5>
   <a href="{{route('bhn_adiktif.tambah')}}"class="btn btn-info">Tambah</a>
 </div>
-<div class="row">
-  <div class="col-60">
+<div class="rows">
+  <div class="col-12">
     <table class="table table-bordered" id="myTable">
           <thead>
            <tr>
@@ -33,6 +33,8 @@
               </td>
             </tr>
             @endforeach
+            </tbody>
+          </table>
   </div>
 </div>
 @endsection

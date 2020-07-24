@@ -36,8 +36,8 @@ class HukumController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request[
-        'isi'=>'|unique:hukums'
+      $this->validate($request,[
+        'isi' => 'required|unique:hukums'
       ]);
       $hukum= new Hukum();
       $hukum->keterangan = $request->keterangan;

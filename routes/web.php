@@ -10,51 +10,47 @@ Route::get('/admin', function () {
 });
 
 Auth::routes(['verify' => true]);
-
-Route::get('/admin', 'DashboardController@index')->name('dash.index');
+  Route::get('/', 'AuthAdminController@index')->name('admin.login');
+Route::get('/admin', 'DashboardController@index_admin')->name('dash.index');
   Route::group(['prefix' => 'admin'], function(){
-  Route::get('/login', 'AuthAdminController@index')->name('admin.login');
+
   Route::post('/login','AuthAdminController@login')->name('admin.to.login');
   Route::get('/logout', 'AuthAdminController@logout')->name('admin.logout');
 
-   Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
-   Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
-   Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');
-   Route::get('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
-   Route::get('/laporan/pdf','PesanController@pdf')->name('cetak_pdf');
 
-
-   //users
-   Route::get('/user', 'UserController@index')->name('user.index');
-   Route::patch('/user/update/{user}', 'UserController@update')->name('user.update');
-
-   //Admin1
+   //super_admin
    Route::get('/karyawan', 'KaryawanController@index')->name('karyawan.index');
    Route::get('/karyawan/tambah','KaryawanController@create')->name('karyawan.tambah');
    Route::post('/karyawan/tambah','KaryawanController@store')->name('karyawan.store');
    Route::get('/karyawan/ubah/{id}', 'KaryawanController@edit')->name('karyawan.ubah');
    Route::patch('/karyawan/ubah/{id}', 'KaryawanController@update')->name('karyawan.update');
 
-   Route::group(['prefix' => 'rehabilitasi'], function(){
-     Route::get('/', 'RehabilitasiController@index')->name('rehabilitasi.index');
-      Route::get('tambah', 'RehabilitasiController@create')->name('rehabilitasi.tambah');
-      Route::post('tambah', 'RehabilitasiController@store')->name('rehabilitasi.store');
-      Route::get('ubah/{id}', 'RehabilitasiController@edit')->name('rehabilitasi.ubah');
-      Route::patch('ubah/{id}', 'RehabilitasiController@update')->name('rehabilitasi.update');
-      Route::get('hapus/{id}', 'RehabilitasiController@destroy')->name('rehabilitasi.hapus');
-
-   });
 
 
 // KARYAWAN
 });
 Route::group(['prefix' => 'karyawan'], function(){
+
 Route::get('/login', 'Karyawan\AuthKaryawanController@index')->name('karyawan.login');
 Route::post('/login','Karyawan\AuthKaryawanController@login')->name('karyawan.to.login');
+Route::get('/', 'DashboardController@index_karyawan')->name('dash_karyawan');
+
 Route::get('/logout', 'Karyawan\AuthKaryawanController@logout')->name('karyawan.logout');
 
+//laporan
+Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
+Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
+Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');
+Route::get('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
+Route::get('/laporan/pdf','PesanController@pdf')->name('cetak_pdf');
 
-Route::group(['prefix' => 'narkotika'], function(){
+
+//users
+Route::get('/user', 'UserController@index')->name('user.index');
+Route::patch('/user/update/{user}', 'UserController@update')->name('user.update');
+
+//narkoba
+  Route::group(['prefix' => 'narkotika'], function(){
   Route::get('/', 'NarkotikaController@index')->name('narkotika.index');
   Route::get('tambah','NarkotikaController@create')->name('narkotika.tambah');
   Route::post('tambah','NarkotikaController@store')->name('narkotika.store');
@@ -84,7 +80,7 @@ Route::group(['prefix' => 'zat-adiktif'], function(){
   Route::get('detail/{id}', 'BhnAdiktifController@show')->name('bhn_adiktif.lihat');
 });
 
-
+//hukum
 Route::group(['prefix' => 'hukum'], function(){
    Route::get('/', 'HukumController@index')->name('hukum.index');
    Route::get('tambah', 'HukumController@create')->name('hukum.tambah');
@@ -95,7 +91,7 @@ Route::group(['prefix' => 'hukum'], function(){
    Route::get('detail/{id}', 'HukumController@show')->name('hukum.lihat');
 });
 
-
+//pencegahan
 Route::group(['prefix' => 'pencegahan'], function(){
    Route::get('/', 'PencegahanController@index')->name('pencegahan.index');
    Route::get('tambah', 'PencegahanController@create')->name('pencegahan.tambah');
@@ -105,6 +101,18 @@ Route::group(['prefix' => 'pencegahan'], function(){
    Route::get('hapus/{id}', 'PencegahanController@destroy')->name('pencegahan.hapus');
    Route::get('detail/{id}', 'PencegahanController@show')->name('pencegahan.lihat');
 });
+
+//rehabilitasi
+Route::group(['prefix' => 'rehabilitasi'], function(){
+  Route::get('/', 'RehabilitasiController@index')->name('rehabilitasi.index');
+   Route::get('tambah', 'RehabilitasiController@create')->name('rehabilitasi.tambah');
+   Route::post('tambah', 'RehabilitasiController@store')->name('rehabilitasi.store');
+   Route::get('ubah/{id}', 'RehabilitasiController@edit')->name('rehabilitasi.ubah');
+   Route::patch('ubah/{id}', 'RehabilitasiController@update')->name('rehabilitasi.update');
+   Route::get('hapus/{id}', 'RehabilitasiController@destroy')->name('rehabilitasi.hapus');
+
+});
+
 
 });
 // //narkotika

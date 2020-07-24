@@ -1,4 +1,4 @@
-@extends ('templates.admin1')
+@extends ('templates.admin2')
 @section('content')
 <div class="widget-body">
   <div class="row">
