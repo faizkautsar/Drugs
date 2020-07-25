@@ -77,14 +77,22 @@ class AuthUserController extends Controller
 
       if(Auth::guard('user')->attempt($credentials)){
         $user = Auth::guard('user')->user();
+        if($user->email_verified_at){
+          $user->update(['fcm_token' => $request->fcm_token]);
 
-        $user->update(['fcm_token' => $request->fcm_token]);
+          return response()->json([
+            'message' => 'login berhasil',
+            'status' => true,
+            'data' => $user
+          ]);
+        }else {
+          return response()->json([
+            'message' => 'login gagal email belum dikonfirmasi',
+            'status' => false,
+            'data' => (object) []
+          ]);
+        }
 
-        return response()->json([
-          'message' => 'login berhasil',
-          'status' => true,
-          'data' => $user
-        ]);
       }
 
       return response()->json([
