@@ -12,7 +12,7 @@ use FCM;
 class PesanController extends Controller
 {
     public function __construct(){
-      $this->middleware('auth:user-api');
+      $this->middleware(['auth:user-api', 'verified']);
     }
 
     public function laporan(Request $request){

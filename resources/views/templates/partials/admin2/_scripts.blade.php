@@ -41,7 +41,7 @@ $(document).ready( function () {
     if(data.length > 0){
       footerNotify.innerHTML = `<a href="{{route('laporan.index')}}" class="btn btn-link text-primary fs-12">Lihat semua laporan</a>`
     }else {
-      footerNotify.innerHTML = ` <span class="text-danger">Belum ada lpaoran</span>`
+      footerNotify.innerHTML = ` <span class="text-danger">Belum ada laporan</span>`
     }
     // console.log();
     notify.style.display = data.filter(d => d.status === 0).length > 0 ? '' : 'none'

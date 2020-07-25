@@ -7,7 +7,11 @@ use App\Laporan;
 use Illuminate\Http\Request;
 use PDF;
 use App\User;
-use FCM;
+use LaravelFCM\Facades\FCM;
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+
 class PesanController extends Controller
 {
 
@@ -42,23 +46,23 @@ class PesanController extends Controller
       //                   'status' => $request->status,
       //               ]);
       //
-      //   $token = $laporan->seller->fcm_token;
-      //   $message = "Ada Pesanan silahkan cek";
-      //
-      //   $optionBuilder = new OptionsBuilder();
-      //   $optionBuilder->setTimeToLive(60*20);
-      //
-      // $notificationBuilder = new PayloadNotificationBuilder('no-drugs');
-      // $notificationBuilder->setBody($message)->setSound('default');
-      //
-      // $dataBuilder = new PayloadDataBuilder();
-      // $dataBuilder->addData(['a_data' => 'my_data']);
-      //
-      // $option = $optionBuilder->build();
-      // $notification = $notificationBuilder->build();
-      //
-      // $data = $dataBuilder->build();
-      // FCM::sendTo($token, $option, $notification, $data);
+        $token = $laporan->user->fcm_token;
+        $message = "Ada Pesanan silahkan cek";
+
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60*20);
+
+        $notificationBuilder = new PayloadNotificationBuilder('no-drugs');
+        $notificationBuilder->setBody($message)->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+
+        $data = $dataBuilder->build();
+        FCM::sendTo($token, $option, $notification, $data);
 
         // $message = "Ada Pesanan silahkan cek";
         //
