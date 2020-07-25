@@ -37,28 +37,28 @@ class PesanController extends Controller
     public function update(Laporan $laporan)
     {
         $laporan->update(['status' => !$laporan->status]);
-        $laporan = Laporan::create([
-                        'user_id' => Auth::user()->id,
-                        'status' => $request->status,
-                    ]);
-
-        $token = $laporan->seller->fcm_token;
-        $message = "Ada Pesanan silahkan cek";
-
-        $optionBuilder = new OptionsBuilder();
-        $optionBuilder->setTimeToLive(60*20);
-
-      $notificationBuilder = new PayloadNotificationBuilder('no-drugs');
-      $notificationBuilder->setBody($message)->setSound('default');
-
-      $dataBuilder = new PayloadDataBuilder();
-      $dataBuilder->addData(['a_data' => 'my_data']);
-
-      $option = $optionBuilder->build();
-      $notification = $notificationBuilder->build();
-
-      $data = $dataBuilder->build();
-      FCM::sendTo($token, $option, $notification, $data);
+      //   $laporan = Laporan::create([
+      //                   'user_id' => Auth::user()->id,
+      //                   'status' => $request->status,
+      //               ]);
+      //
+      //   $token = $laporan->seller->fcm_token;
+      //   $message = "Ada Pesanan silahkan cek";
+      //
+      //   $optionBuilder = new OptionsBuilder();
+      //   $optionBuilder->setTimeToLive(60*20);
+      //
+      // $notificationBuilder = new PayloadNotificationBuilder('no-drugs');
+      // $notificationBuilder->setBody($message)->setSound('default');
+      //
+      // $dataBuilder = new PayloadDataBuilder();
+      // $dataBuilder->addData(['a_data' => 'my_data']);
+      //
+      // $option = $optionBuilder->build();
+      // $notification = $notificationBuilder->build();
+      //
+      // $data = $dataBuilder->build();
+      // FCM::sendTo($token, $option, $notification, $data);
 
         // $message = "Ada Pesanan silahkan cek";
         //

@@ -38,8 +38,6 @@ class AuthUserController extends Controller
 
       $this->validate($request, $rule, $message);
 
-
-
       $user = User::create([
         'nama' => $request->nama,
         'email' => $request->email,
@@ -49,7 +47,6 @@ class AuthUserController extends Controller
         'desa' => $request->desa,
         'kecamatan' =>$request->kecamatan,
         'kota' =>$request->kota,
-
         'api_token' => bcrypt($request->email),
       ]);
       $user->sendApiEmailVerificationNotification();
@@ -65,6 +62,7 @@ class AuthUserController extends Controller
       $rule = [
         'email' => 'required',
         'password'=>'required',
+        'fcm_token' => 'required'
       ];
 
       $message = [
@@ -79,6 +77,9 @@ class AuthUserController extends Controller
 
       if(Auth::guard('user')->attempt($credentials)){
         $user = Auth::guard('user')->user();
+
+        $user->update(['fcm_token' => $request->fcm_token]);
+
         return response()->json([
           'message' => 'login berhasil',
           'status' => true,
