@@ -16,8 +16,8 @@ class CreateKaryawansTable extends Migration
         Schema::create('karyawans', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->string('nama','100');
-          $table->string('ttl');
-          $table->string('email')->unique();
+          $table->string('ttl','50');
+          $table->string('email','50')->unique();
           $table->string('password');
           $table->char('no_telp',13)->unique();
           $table->text('alamat','100');

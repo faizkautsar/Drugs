@@ -17,7 +17,7 @@ class CreatePsikotropikasTable extends Migration
             $table->Increments('id');
             $table->bigInteger('id_karyawan')->unsigned();
             $table->string('nama','100');
-            $table->string('golongan','25');
+            $table->string('golongan','20');
             $table->text('dampak');
             $table->text('keterangan');
             $table->text('gambar');

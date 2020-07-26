@@ -20,6 +20,7 @@ class PesanController extends Controller
     $this->middleware('guest:karyawan')->except('logout');
   }
     public function laporan(){
+
       $laporan = Laporan::all();
       return view ('pages.Admin2.Lapor.pesan', compact('laporan'));
     }
@@ -41,13 +42,10 @@ class PesanController extends Controller
     public function update(Laporan $laporan)
     {
         $laporan->update(['status' => !$laporan->status]);
-      //   $laporan = Laporan::create([
-      //                   'user_id' => Auth::user()->id,
-      //                   'status' => $request->status,
-      //               ]);
-      //
+
         $token = $laporan->user->fcm_token;
-        $message = "Ada Pesanan silahkan cek";
+        $message = "Terimakasih atas partisipasi anda dalam memberantas narkoba.
+                    Laporan telah di konfirmasi";
 
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(60*20);
@@ -64,48 +62,7 @@ class PesanController extends Controller
         $data = $dataBuilder->build();
         FCM::sendTo($token, $option, $notification, $data);
 
-        // $message = "Ada Pesanan silahkan cek";
-        //
-        // $user=User::pluck('nama')->toArray();
-        // $optionBuilder = new OptionsBuilder();
-        //   $optionBuilder->setTimeToLive(60*20);
-        //   $notificationBuilder = new PayloadNotificationBuilder('my title');
-        //   $notificationBuilder->setBody('Hello world')
-        //            ->setSound('default');
-        //
-        //   $dataBuilder = new PayloadDataBuilder();
-        //   $option = $optionBuilder->build();
-        //  $notification = $notificationBuilder->build();
-        //  $data = $dataBuilder->build();
-        //  //
-        //  // // You must change it to get your tokens
-        //         $tokens = User::pluck('fcm_token')->toArray();
-        //  //
-        //       $downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
-
-
-
-
         return redirect()->route('laporan.index');
-//         $user = User::pluck('nama')->toArray();
-//         $optionBuilder = new OptionsBuilder();
-//         $optionBuilder->setTimeToLive(60*20);
-//
-//         $notificationBuilder = new PayloadNotificationBuilder('my title');
-//         $notificationBuilder->setBody('Hello world')
-//             ->setSound('default');
-//
-//         $dataBuilder = new PayloadDataBuilder();
-//         $dataBuilder->addData(['a_data' => 'my_data']);
-//
-//         $option = $optionBuilder->build();
-//         $notification = $notificationBuilder->build();
-//         $data = $dataBuilder->build();
-//
-// // You must change it to get your tokens
-//         $tokens = User::pluck('fcm_token')->toArray();
-//
-//       $downstreamResponse = FCM::sendTo($tokens, $option, $notification, $data);
 
     }
 

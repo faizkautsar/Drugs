@@ -15,16 +15,16 @@ class CreateLaporansTable extends Migration
     {
         Schema::create('laporans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('peran',20);
+            $table->string('peran','20');
             $table->text('foto');
-            $table->string('nama',100);
+            $table->string('nama','100');
             $table->char('no_telp',13)->unique();
             $table->text('alamat');
-            $table->string('jenis_narkoba');
-            $table->string('pekerjaan');
-            $table->string('kendaraan')->nulllabel();
-            $table->string('kegiatan');
-            $table->string('tmpt_transaksi');
+            $table->string('jenis_narkoba','100');
+            $table->string('pekerjaan','50');
+            $table->string('kendaraan','100')->nulllabel();
+            $table->string('kegiatan','100');
+            $table->string('tmpt_transaksi',100);
             $table->boolean('status')->default(false);
             $table->bigInteger('id_user')->unsigned();
             $table->timestamps();

@@ -17,7 +17,7 @@ class CreateRehabilitasisTable extends Migration
             $table->Increments('id');
             $table->string('inisial','6');
             $table->string('nama_lengkap','50');
-            $table->date('tanggal_lahir');
+            $table->date('tanggal_lahir','50');
             $table->text('alamat')->nullable();
             $table->text('keterangan')->nullable();
             $table->string('pekerjaan','20')->nullable();

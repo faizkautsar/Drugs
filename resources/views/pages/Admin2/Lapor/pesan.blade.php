@@ -30,13 +30,12 @@
           <thead>
            <tr>
             <th>NO</th>
-            <th>Foto</th>
+            <th>Tanggal</th>
             <th>Peran</th>
-            <th>Nama </th>
+            <th>Nama</th>
             <th>Alamat </th>
             <th>Jenis Narkoba</th>
-            <th>Transaksi</th>
-            <th>Tanggal</th>
+            <th>Foto</th>
             <th>Status</th>
             <th>Aksi</th>
 
@@ -46,13 +45,12 @@
             @foreach($laporan as $lp)
             <tr>
            <td>{{$loop->iteration}}</td>
-           <td><img src="{{asset('uploads/laporan'.$lp->foto)}}" width="100" height="100"  </td>
+           <th>{{$lp->created_at->format('d/m/Y')}}</th>
            <th>{{$lp->peran}}</th>
            <th>{{$lp->nama}}</th>
            <th>{!!str_limit($lp->alamat, 20, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
-           <th>{!!str_limit($lp->tmpt_transaksi, 10, '...')!!}</th>
-           <th>{{$lp->created_at->format('d-m-Y')}}</th>
+           <td><img src="{{asset('uploads/user/laporan'.$lp->foto)}}" width="80" height="80"  </td>
            <th>{{$lp->status ? 'Terkonfirmasi' : 'Belum Terkonfirmasi'}}</th>
            <td>
               <a href="{{ route('lihat_laporan.index', $lp->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
