@@ -16,8 +16,9 @@
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="l0">Isi</label>
               <div class="col-md-9">
-                <input class="form-control {{$errors->has('isi')?'is-invalid':''}}"
-                name="isi" placeholder="isi" type="text" value="{{old('isi')}}">
+                
+                <textarea class="form-control {{$errors->has('isi')?'is-invalid':''}}"
+                   name="isi" id="basic-1" rows="3" value="{{old('isi')}}"></textarea>
                 @if ($errors->has('isi'))
                   <span class="invalid-feedback" role="alert">
                     <p><b>{{ $errors->first('isi') }}</b></p>

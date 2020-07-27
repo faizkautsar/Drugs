@@ -37,7 +37,7 @@ class RehabilitasiController extends Controller
     {
 
           $this->validate($request,[
-            'nama_lengkap'=>'required|unique:rehabilitasis',
+            'nama_lengkap'=>'required|min:3|max:50',
             'rujukan'=> 'required'
           ]);
 
@@ -57,7 +57,7 @@ class RehabilitasiController extends Controller
         $rehabilitasi->keterangan = $request->keterangan;
         $rehabilitasi->pekerjaan = $request->pekerjaan;
         $rehabilitasi->rujukan = $request->rujukan;
-        //$rehabilitasi->save();
+        $rehabilitasi->save();
 
 
         return redirect()->route('rehabilitasi.index');
@@ -96,7 +96,7 @@ class RehabilitasiController extends Controller
     {
       {
           $this->validate($request,[
-            'nama_lengkap'=>'required',
+            'nama_lengkap'=>'required|min:3|max:50',
             'rujukan'=> 'required'
               ]);
           $rehabilitasi = Rehabilitasi::findOrFail($id);

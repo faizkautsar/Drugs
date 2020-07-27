@@ -21,8 +21,7 @@
         <div class="form-group row">
             <label class="col-md-3 col-form-label"  for="l15">Tanggal Lahir</label>
             <div class="col-md-9">
-                <input class="form-control "
-                 value="{{old('tanggal_lahir')}}" name="tanggal_lahir" type="date" >
+                <input class="form-control" name="tanggal_lahir" type="date" >
                    </div>
         </div>
 
@@ -30,8 +29,8 @@
            <label class="col-md-3 col-form-label" for="l0">Alamat</label>
            <div class="col-md-9">
              <textarea class="form-control "
-             name="alamat" placeholder="alamat" type="text" value="{{old('alamat')}}">
-</textarea>
+             name="alamat" placeholder="alamat" type="text" >
+           </textarea>
            </div>
          </div>
 
@@ -39,7 +38,7 @@
             <label class="col-md-3 col-form-label" for="l0">Keterangan</label>
             <div class="col-md-9">
               <input class="form-control "
-              name="keterangan" placeholder="keterangan" type="text" value="{{old('keterangan')}}">
+              name="keterangan" placeholder="keterangan" type="text" >
             </div>
           </div>
 
@@ -47,7 +46,7 @@
             <label class="col-md-3 col-form-label" for="l0">Pekerjaan</label>
             <div class="col-md-9">
               <input class="form-control "
-              name="pekerjaan" placeholder="pekerjaan" type="text" value="{{old('pekerjaan')}}">
+              name="pekerjaan" placeholder="pekerjaan" type="text" >
             </div>
           </div>
 
