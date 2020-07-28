@@ -7,9 +7,9 @@
             <div class="card-header sub-heading-font-family border-bottom-0 p-0">
                 <figure>
                     <a href="javascript:void(0);">
-                        <img class="card-img-top" src="{{asset($laporan->foto)}}" height="200" width="200">
+                        <img class="card-img-top" src="{{asset($laporan->foto)}}" height="200" alt="">
                     </a>
-                </figure><span class="badge badge-danger text-uppercase">Golongan : {{$laporan->peran}}</span>
+                </figure><span class="badge badge-danger text-uppercase">{{$laporan->peran}}</span>
 
             </div>
             <div class="card-body sub-heading-font-family">
