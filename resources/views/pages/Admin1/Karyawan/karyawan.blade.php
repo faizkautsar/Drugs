@@ -1,7 +1,7 @@
 @extends ('templates.admin1')
 @section('content')
 <div class="widget-body">
-  <h5 class="box-title">User</h5>
+  <h5 class="box-title">Karyawan</h5>
 <a href="{{route('karyawan.tambah')}}" class="btn btn-info">Tambah</a>
 </div>
 <div class="row">

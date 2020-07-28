@@ -58,7 +58,7 @@ class NarkobaController extends Controller
         'data' => $psikotropika
       ]);
     }
-    public function bhn_adiktif(){
+    public function zat-adiktif(){
       $bhn_adiktif = Bhn_adiktif::all();
       return response()->json([
         'message' => 'Berhasil',

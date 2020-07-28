@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Karyawan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Karyawan;
 
 class AuthKaryawanController extends Controller
 {
@@ -15,7 +16,7 @@ class AuthKaryawanController extends Controller
    */
    public function _construct()
    {
-     $this->middleware('guest:karyawan')->except('logout');
+     $this->middleware('guest:karyawan');
    }
 
   public function index(){

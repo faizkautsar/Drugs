@@ -14,7 +14,7 @@ class AuthAdminController extends Controller
      */
      public function _construct()
      {
-       $this->middleware('guest:admin')->except('logout');
+       $this->middleware('guest:admin');
      }
 
     public function index(){
@@ -28,7 +28,7 @@ class AuthAdminController extends Controller
           'password' => $request->password,
         ];
         if(Auth::attempt($admin, $request->remember)){
-          return redirect('/admin');
+          return redirect()->route('dash.index');
         }
         return redirect()->back()->withInput($request->only('username','remember'));
     }

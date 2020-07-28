@@ -28,7 +28,7 @@
     <div id="wrapper" class="row wrapper">
         <div class="container-min-full-height d-flex justify-content-center align-items-center">
             <div class="login-center">
-              <h4 class="text-center">Admin</h4>
+              <h4 class="text-center">Super Admin</h4>
                 <div class="navbar-header text-center mt-2 mb-4">
                     <a href="index.html">
                         <img alt="" width="150" height="150" src="{{asset('assets/img/logo-bnn.png')}}">

@@ -15,7 +15,7 @@ class BhnAdiktifController extends Controller
 
      public function _construct()
      {
-       $this->middleware('guest:karyawan')->except('logout');;
+       $this->middleware('guest:karyawan')->except('logout');
      }
 
 

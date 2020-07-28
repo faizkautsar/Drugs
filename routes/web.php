@@ -5,9 +5,9 @@
 //     return view('auth.login');
 // });
 
-Route::get('/admin', function () {
-    return view('templates.admin');
-});
+// Route::get('/admin', function () {
+//     return view('templates.admin');
+// });
 
 Auth::routes(['verify' => true]);
   Route::get('/', 'AuthAdminController@index')->name('admin.login');
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'karyawan'], function(){
 
 Route::get('/login', 'Karyawan\AuthKaryawanController@index')->name('karyawan.login');
 Route::post('/login','Karyawan\AuthKaryawanController@login')->name('karyawan.to.login');
-Route::get('/', 'DashboardController@index_karyawan')->name('dash_karyawan');
+Route::get('/', 'DashboardKaryawanController@index_karyawan')->name('dash_karyawan');
 
 Route::get('/logout', 'Karyawan\AuthKaryawanController@logout')->name('karyawan.logout');
 
