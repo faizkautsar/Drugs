@@ -50,7 +50,7 @@
            <th>{{$lp->nama}}</th>
            <th>{!!str_limit($lp->alamat, 20, '...')!!}</th>
            <th>{{$lp->jenis_narkoba}}</th>
-           <td><img src="{{asset('uploads/user/laporan'.$lp->foto)}}" width="80" height="80"  </td>
+           <td><img src="{{asset($lp->foto)}}" width="80" height="80"  </td>
            <th>{{$lp->status ? 'Terkonfirmasi' : 'Belum Terkonfirmasi'}}</th>
            <td>
               <a href="{{ route('lihat_laporan.index', $lp->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
