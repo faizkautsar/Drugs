@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::get('rehabilitasi','Api\NarkobaController@rehabilitasi');
 Route::get('narkotika','Api\NarkobaController@narkotika');
 Route::get('psikotropika', 'Api\NarkobaController@psikotropika');
-Route::get('zat-adiktif', 'Api\NarkobaController@zat-adiktif');
+Route::get('zat-adiktif', 'Api\NarkobaController@bhnadiktif');
 Route::get('pencegahan', 'Api\NarkobaController@pencegahan');
 Route::get('hukum', 'Api\NarkobaController@hukum');
 Route::get('statistik', 'Api\NarkobaController@statistik');
