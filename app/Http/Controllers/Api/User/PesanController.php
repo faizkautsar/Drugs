@@ -81,6 +81,7 @@ class PesanController extends Controller
       ]);
     }
   }
+
   public function confirmed($id)
    {
        $laporan = Laporan::findOrFail($id);

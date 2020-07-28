@@ -75,7 +75,7 @@ $(document).ready( function () {
     <li>
       <div href="#" class="media">
         <span class="media-body">
-          <span class="thumb-xs5 ${d.status === 0 ? 'user--online' : ''}">
+          <span class="thumb-xs5 ${d.status == 0 ? 'user--online' : ''}">
             <span class="heading-font-family media-heading">Laporan dari ${d.user.nama}</span>
             <div class="media-content">Pelaku ${d.nama} Peran sebagai ${d.peran}</div>
             <div class="float-right mt-1">${new Date(d.created_at).toLocaleString('id-ID')}</div>

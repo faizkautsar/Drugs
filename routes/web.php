@@ -10,9 +10,10 @@
 // });
 
 Auth::routes(['verify' => true]);
-  Route::get('/', 'AuthAdminController@index')->name('admin.login');
+
+Route::get('/', 'AuthAdminController@index')->name('admin.login');
 Route::get('/admin', 'DashboardController@index_admin')->name('dash.index');
-  Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin'], function(){
 
   Route::post('/login','AuthAdminController@login')->name('admin.to.login');
   Route::get('/logout', 'AuthAdminController@logout')->name('admin.logout');
@@ -127,3 +128,11 @@ Route::group(['prefix' => 'rehabilitasi'], function(){
 //
 // });
 // //Auth
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
