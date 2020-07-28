@@ -52,7 +52,7 @@ class BhnAdiktifController extends Controller
         ]);
         $gambar = $request->file('gambar');
         $namafile = time().'.'. $gambar->getClientOriginalExtension();
-        $tempatfile = public_path('uploads/narkoba/BahanAdiktif');
+        $tempatfile = public_path('uploads/narkoba/zat-adiktif');
         $gambar->move($tempatfile, $namafile);
 
         $bhn_adiktif = new Bhn_adiktif();
@@ -112,7 +112,7 @@ class BhnAdiktifController extends Controller
         if ($request->gambar) {
           $gambar = $request->file('gambar');
           $namafile = time().'.'.$gambar->getClientOriginalExtension();
-          $tempatfile =public_path('uploads/narkoba/BahanAdiktif');
+          $tempatfile =public_path('uploads/narkoba/zat-adiktif');
           $gambar->move($tempatfile,$namafile);
 
         }
