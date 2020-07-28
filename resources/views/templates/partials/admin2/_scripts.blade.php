@@ -44,7 +44,7 @@ $(document).ready( function () {
       footerNotify.innerHTML = ` <span class="text-danger">Belum ada laporan</span>`
     }
     // console.log();
-    notify.style.display = data.filter(d => d.status === 0).length > 0 ? '' : 'none'
+    notify.style.display = data.filter(d => d.status == 0).length > 0 ? '' : 'none'
   }
 
   showNotification();
