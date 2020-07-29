@@ -23,7 +23,7 @@ Route::get('statistik', 'Api\NarkobaController@statistik');
 Route::get('bahaya', 'Api\NarkobaController@bahaya');
 
 
-Route::post('register', 'Api\User\AuthUserController@register');
+Route::post('register', 'Api\User\AuthUserController@register')->middleware('guest:user-api');
 Route::post('login', 'Api\User\AuthUserController@login');
 Route::get('email/verify/{id}', 'Api\User\VerificationController@verify')->name('api.verification.verify');
 Route::get('email/resend', 'Api\User\VerificationController@resend')->name('api.verification.resend');

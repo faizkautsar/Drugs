@@ -31,4 +31,5 @@ class VerificationController extends Controller
       $request->user()->sendEmailVerificationNotification();
       return response()->json('The notification has been resubmitted');
   }
+
 }
