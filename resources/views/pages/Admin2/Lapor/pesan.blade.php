@@ -7,15 +7,20 @@
 
     </div>
 </div>
+@if(Session::has('message'))
+<div class="alert alert-danger" role="alert">
+  {{Session::get('message')}}
+</div>
+@endif
 
 <form class="" action="{{route('cetak_pdf')}}" method="get">
   <div class="row">
     <div class="col-3">
-      <input type="date" name="tanggal_mulai" class="form-control form-control-sm" value="">
+      <input type="date" name="tanggal_mulai" max="{{now()->format('Y-m-d')}}" class="form-control form-control-sm" value="">
     </div>
 
     <div class="col-3">
-      <input type="date" name="tanggal_selesai" class="form-control form-control-sm" value="">
+      <input type="date" name="tanggal_selesai" max="{{now()->format('Y-m-d')}}" class="form-control form-control-sm" value="">
     </div>
 
     <div class="col-3">
