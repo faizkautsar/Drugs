@@ -1,15 +1,22 @@
 @extends ('templates.admin2')
 @section('content')
-<div class="widget-body">
+<div class="widget-list">
   <div class="row">
     <div class="col-md-12 mr-b-30">
-        <div class="card blog-post-new">
-            <div class="card-header sub-heading-font-family border-bottom-0 p-0">
+        <div class="card">
+            <div class="card-header">
                 <figure>
+                  <div class="text-center">
                     <a href="javascript:void(0);">
-                        <img class="card-img-top" src="{{asset($laporan->foto)}}" height="200" alt="">
+
+                        <img class="img-fluid" src="{{asset($laporan->foto)}}" alt="">
                     </a>
-                </figure><span class="badge badge-danger text-uppercase">{{$laporan->peran}}</span>
+                  </div>
+                </figure>
+                <div class="text-center">
+                  <span class="badge badge-danger text-uppercase">{{$laporan->peran}}</span>
+                  
+                </div>
 
             </div>
             <div class="card-body sub-heading-font-family">
