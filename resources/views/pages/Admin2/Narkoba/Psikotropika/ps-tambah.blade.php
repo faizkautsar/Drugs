@@ -1,8 +1,8 @@
 @extends('templates.admin2')
 @section('content')
 <div class="widget-body clearfix">
-  <h5 class="box-title mr-b-0">Form Tambah Narkotika</h5>
-   <p class="text-muted">Menginputkan narkotika</p>
+  <h5 class="box-title mr-b-0">Form Psikotropika</h5>
+   <p class="text-muted">Menginputkan psikotropika</p>
     <form method="post" enctype="multipart/form-data" action="{{route('ps.store')}}">
       @csrf
      <div class="form-group row">

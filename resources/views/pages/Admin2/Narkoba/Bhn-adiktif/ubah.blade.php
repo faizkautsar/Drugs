@@ -1,8 +1,8 @@
 @extends('templates.admin2')
 @section('content')
 <div class="widget-body clearfix">
-  <h5 class="box-title mr-b-0">Form Edit Bahan Adiktif</h5>
-   <p class="text-muted">Mengubah Bahan Adiktif</p>
+  <h5 class="box-title mr-b-0">Form Edit Zat Adiktif</h5>
+   <p class="text-muted">Mengubah Zat Adiktif</p>
     <form method="post" enctype="multipart/form-data" action="{{route('bhn_adiktif.update',$bhn_adiktif->id)}}">
       @csrf
       @method('PATCH')
