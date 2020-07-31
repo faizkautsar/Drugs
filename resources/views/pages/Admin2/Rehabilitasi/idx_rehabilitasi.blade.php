@@ -27,7 +27,7 @@
               <td>{{$r->rujukan}}</td>
               <td>
                 <a href="{{route('rehabilitasi.ubah', $r->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-                <a href="{{route('rehabilitasi.hapus', $r->id)}}" onclick="return confirm('Apakah Anda Yakin Ingin Dihapus?')"
+                <a href="{{route('rehabilitasi.hapus', $r->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
                   class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
 
              </td>

@@ -23,7 +23,7 @@
              <td>{!!str_limit($h->isi,60,'...')!!}</td>
              <td>
                <a href="{{route('hukum.ubah', $h->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-               <a href="{{route('hukum.hapus', $h->id)}}" onclick="return confirm('Apakah Anda Yakin Ingin Dihapus?')"
+               <a href="{{route('hukum.hapus', $h->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
                class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
              </td>
            </tr>

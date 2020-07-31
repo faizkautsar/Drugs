@@ -32,7 +32,7 @@
             <td>
               <a href="{{route('narkotika.lihat', $n_dt->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
               <a href="{{route('narkotika.ubah', $n_dt->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-              <a href="{{route('narkotika.hapus', $n_dt->id)}}" onclick="return confirm('Apakah Anda Yakin Ingin Dihapus?')"
+              <a href="{{route('narkotika.hapus', $n_dt->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
                 class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
            </td>
          </tr>

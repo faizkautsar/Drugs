@@ -1,7 +1,7 @@
 @extends ('templates.admin2')
 @section('content')
 <div class="widget-body">
-  <h5 class="box-title">Bahan Adiktif</h5>
+  <h5 class="box-title">Zat Adiktif</h5>
   <a href="{{route('bhn_adiktif.tambah')}}"class="btn btn-info">Tambah</a>
 </div>
 <div class="rows">
@@ -28,7 +28,7 @@
               <td>
                 <a href="{{route('bhn_adiktif.lihat', $bhn_a->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                 <a href="{{route('bhn_adiktif.ubah', $bhn_a->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-                <a href="{{route('bhn_adiktif.hapus', $bhn_a->id)}}" onclick="return confirm('Apakah Anda Yakin Ingin Dihapus?')"
+                <a href="{{route('bhn_adiktif.hapus', $bhn_a->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
                 class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
               </td>
             @endforeach
