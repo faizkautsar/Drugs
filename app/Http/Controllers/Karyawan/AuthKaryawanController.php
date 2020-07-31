@@ -25,7 +25,13 @@ class AuthKaryawanController extends Controller
 
   public function login(Request $request)
   {
-    // dd($request->all());
+    $rule= [
+      'email'=>'required|email',
+      'password' =>'required|min:8|numeric',
+
+    ];
+
+    $this->validate($request,$rule);
       $karyawan = [
         'email' => $request->email,
         'password' => $request->password,

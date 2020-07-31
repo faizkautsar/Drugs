@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Hukum;
 use Auth;
@@ -37,7 +36,8 @@ class HukumController extends Controller
     public function store(Request $request)
     {
       $this->validate($request,[
-        'isi' => 'required|unique:hukums'
+        'keterangan' => 'required|min:6',
+        'isi' => 'required',
       ]);
       $hukum= new Hukum();
       $hukum->keterangan = $request->keterangan;
@@ -82,7 +82,7 @@ class HukumController extends Controller
     {
 
                 $this->validate($request,[
-                  'keterangan' => 'required',
+                  'keterangan' => 'required|min:6',
                   'isi' =>'required',
                 ]);
                 $hukum = Hukum::findOrFail($id);
