@@ -35,17 +35,26 @@
         <div class="form-group row">
            <label class="col-md-3 col-form-label" for="l0">No Telepon</label>
            <div class="col-md-9">
-             <textarea class="form-control "
-             name="no_telp" placeholder="no_telp" type="text" value="{{$karyawan->no_telp}}">
-           </textarea>
+             <input class="form-control {{$errors->has('no_telp')?'is-invalid':''}}"
+             name="no_telp"  type="numeric" value="{{$karyawan->no_telp}}">
+             @if ($errors->has('no_telp'))
+               <span class="invalid-feedback" role="alert">
+                 <p><b>{{ $errors->first('no_telp') }}</b></p>
+               </span>
+             @endif
            </div>
          </div>
 
         <div class="form-group row">
            <label class="col-md-3 col-form-label" for="l0">Alamat</label>
            <div class="col-md-9">
-             <textarea class="form-control "
+             <textarea class="form-control {{$errors->has('no_telp')?'is-invalid':''}} "
              name="alamat" placeholder="alamat" type="text" value="{{$karyawan->alamat}}">
+             @if ($errors->has('alamat'))
+               <span class="invalid-feedback" role="alert">
+                 <p><b>{{ $errors->first('alamat') }}</b></p>
+               </span>
+             @endif
            </textarea>
            </div>
          </div>

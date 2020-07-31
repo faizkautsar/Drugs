@@ -75,19 +75,20 @@ class KaryawanController extends Controller
         'nama' => 'required',
         'ttl' => 'required',
         'email' => 'required',
-        'password' =>'required',
-        'no_telp'=>'required',
+        'no_telp'=>'required|numeric|digits_between:11,13',
         'alamat' =>'required',
 
       ]);
+      $time = strtotime($request->tanggal);
+      $password = date('dmY',$time);
+      $tanggal = date('d-m-Y',$time);
+
 
       $karyawan = Narkotika::findOrFail($id);
-
-
       $karyawan->nama = $request->nama;
       $karyawan->ttl = $request->ttl;
       $karyawan->email = $request->email;
-      $karyawan->password = $request->password;
+      $karyawan->password=bcrypt($password);
       $karyawan->no_telp = $request->no_telp;
       $karyawan->alamat = $request->alamat ;
       $karyawan->update();
