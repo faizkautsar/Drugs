@@ -17,7 +17,7 @@ class PesanController extends Controller
 
   public function _construct()
   {
-    $this->middleware('guest:karyawan')->except('logout');
+       $this->middleware('auth:karyawan');
   }
     public function laporan(){
 
