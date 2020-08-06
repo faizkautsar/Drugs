@@ -18,15 +18,15 @@ class CreateUsersTable extends Migration
             $table->string('nama','100');
             $table->string('email',50)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('password');
             $table->char('no_telp',13)->unique();
             $table->string('jalan','100');
             $table->string('desa','25');
             $table->string('kecamatan','25');
             $table->string('kota','25');
             $table->text('foto')->nullable();
-            $table->string('fcm_token')->nullable();
-            $table->string('api_token');
+            $table->text('fcm_token')->nullable();
+            $table->text('api_token');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

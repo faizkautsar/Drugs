@@ -18,9 +18,9 @@ class CreateKaryawansTable extends Migration
           $table->string('nama','100');
           $table->string('ttl','50');
           $table->string('email','50')->unique();
-          $table->string('password');
+          $table->text('password');
           $table->char('no_telp',13)->unique();
-          $table->text('alamat','100');
+          $table->text('alamat');
           $table->boolean('status')->default(true);
 
           $table->timestamps();

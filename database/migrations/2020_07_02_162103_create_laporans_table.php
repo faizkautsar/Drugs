@@ -17,10 +17,10 @@ class CreateLaporansTable extends Migration
             $table->bigIncrements('id');
             $table->string('peran','20');
             $table->text('foto');
-            $table->string('nama','100');
+            $table->string('nama','50');
             $table->char('no_telp',13)->unique();
             $table->text('alamat');
-            $table->string('jenis_narkoba','100');
+            $table->string('jenis_narkoba','50');
             $table->string('pekerjaan','50');
             $table->string('kendaraan','100')->nulllabel();
             $table->string('kegiatan','100');
