@@ -21,19 +21,30 @@
 <body class="body-bg-full profile-page  pace-done" style="background-image: url({{asset('assets/img/site-bg.jpg')}})">
   <div class="pace  pace-inactive">
     <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-  <div class="pace-progress-inner">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
   </div>
-</div>
-<div class="pace-activity"></div></div>
+
     <div id="wrapper" class="row wrapper">
         <div class="container-min-full-height d-flex justify-content-center align-items-center">
             <div class="login-center">
+              @if ($message = Session::get('warning'))
+                      <div class="alert alert-warning">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h3 class="text-warning"> Warning</h3> {{ $message }}
+                      </div>
+              @endif
               <h4 class="text-center">Karyawan</h4>
+
                 <div class="navbar-header text-center mt-2 mb-4">
                     <a href="index.html">
                         <img alt="" width="150" height="150" src="{{asset('assets/img/logo-bnn.png')}}">
                     </a>
                 </div>
+
                 <!-- /.navbar-header -->
                 <form method="post" action="{{route('karyawan.to.login')}}">
                   @csrf

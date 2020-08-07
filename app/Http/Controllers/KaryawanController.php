@@ -18,22 +18,10 @@ class KaryawanController extends Controller
         return view('pages.Admin1.Karyawan.karyawan', compact('karyawan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('pages.Admin1.Karyawan.tmbh_karyawan');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
       $this->validate($request,[
@@ -84,7 +72,7 @@ class KaryawanController extends Controller
       $tanggal = date('d-m-Y',$time);
 
 
-      $karyawan = Narkotika::findOrFail($id);
+      $karyawan = Karyawan::findOrFail($id);
       $karyawan->nama = $request->nama;
       $karyawan->ttl = $request->ttl;
       $karyawan->email = $request->email;
@@ -97,9 +85,8 @@ class KaryawanController extends Controller
       return redirect()->route('karyawan.index');
 
     }
-
-    public function destroy(cr $cr)
-    {
-        //
+    public function cekin (Karyawan $karyawan){
+      $karyawan->update(['status' => !$karyawan->status]);
+      return redirect()->back();
     }
 }

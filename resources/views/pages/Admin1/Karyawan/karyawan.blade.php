@@ -13,9 +13,9 @@
             <th>Nama</th>
             <th>Tempat Tanggal Lahir</th>
             <th>Email</th>
-            <th>No Telp</th>
             <th>Alamat</th>
             <th>Status</th>
+            <th>Aksi</th>
 
           </tr>
           </thead>
@@ -26,10 +26,12 @@
            <th>{{$kw->nama}}</th>
            <th>{{$kw->ttl}}</th>
            <th>{{$kw->email}}</th>
-           <th>{{$kw->no_telp}}</th>
            <th>{{$kw->alamat}}</th>
-           <td>  <a href="{{route('karyawan.ubah', $kw->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-
+           <td>
+             <a href="{{ route('karyawan.status', $kw )}}" class="btn {{$kw->status ? 'btn-success' : 'btn-danger'}} btn-sm">{{$kw->status ? 'Aktif' : 'Tidak aktif'}}</a>
+           </td>
+           <td>
+              <a href="{{route('karyawan.ubah', $kw->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
             </td>
            </tr>
 @endforeach

@@ -38,9 +38,16 @@ class AuthKaryawanController extends Controller
       ];
 
       if(Auth::guard('karyawan')->attempt($karyawan, $request->remember)){
-        return redirect()->route('dash_karyawan');
+          $karyawan = Auth::guard('karyawan')->user();
+          if ($karyawan->status) {
+            return redirect()->route('dash_karyawan');
+          }else{
+              return redirect()->back()->withInput($request->only('email','remember'))
+              ->with('warning', 'akun anda telah di matikan, harap hubungi super admin');
+          }
       }
-      return redirect()->back()->withInput($request->only('email','remember'));
+      return redirect()->back()->withInput($request->only('email','remember'))
+      ->with('warning', 'masukkan email dan password yang benar');
   }
 
   public function logout()

@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function(){
    Route::get('/karyawan', 'KaryawanController@index')->name('karyawan.index');
    Route::get('/karyawan/tambah','KaryawanController@create')->name('karyawan.tambah');
    Route::post('/karyawan/tambah','KaryawanController@store')->name('karyawan.store');
+   Route::get('/karyawan/status/{karyawan}', 'KaryawanController@cekin')->name('karyawan.status');
    Route::get('/karyawan/ubah/{id}', 'KaryawanController@edit')->name('karyawan.ubah');
    Route::patch('/karyawan/ubah/{id}', 'KaryawanController@update')->name('karyawan.update');
 
