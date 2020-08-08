@@ -57,7 +57,7 @@ Route::patch('/user/update/{user}', 'UserController@update')->name('user.update'
   Route::post('tambah','NarkotikaController@store')->name('narkotika.store');
   Route::get('ubah/{id}', 'NarkotikaController@edit')->name('narkotika.ubah');
   Route::patch('ubah/{id}', 'NarkotikaController@update')->name('narkotika.update');
-  Route::get('hapus/{id}', 'NarkotikaController@destroy')->name('narkotika.hapus');
+  Route::delete('hapus/{id}', 'NarkotikaController@destroy')->name('narkotika.hapus');
   Route::get('detail/{id}', 'NarkotikaController@show')->name('narkotika.lihat');
 });
 
@@ -67,7 +67,7 @@ Route::group(['prefix' => 'psikotropika'], function(){
   Route::post('tambah','PsikotropikaController@store')->name('ps.store');
   Route::get('ubah/{id}','PsikotropikaController@edit')->name('ps.ubah');
   Route::patch('ubah/{id}','PsikotropikaController@update')->name('ps.update');
-  Route::get('hapus/{id}','PsikotropikaController@destroy')->name('ps.hapus');
+  Route::delete('hapus/{id}','PsikotropikaController@destroy')->name('ps.hapus');
   Route::get('detail/{id}','PsikotropikaController@show')->name('ps.lihat');
 });
 
@@ -77,7 +77,7 @@ Route::group(['prefix' => 'zat-adiktif'], function(){
   Route::post('tambah','BhnAdiktifController@store')->name('bhn_adiktif.store');
   Route::get('ubah/{id}', 'BhnAdiktifController@edit')->name('bhn_adiktif.ubah');
   Route::patch('ubah/{id}', 'BhnAdiktifController@update')->name('bhn_adiktif.update');
-  Route::get('hapus/{id}', 'BhnAdiktifController@destroy')->name('bhn_adiktif.hapus');
+  Route::delete('hapus/{id}', 'BhnAdiktifController@destroy')->name('bhn_adiktif.hapus');
   Route::get('detail/{id}', 'BhnAdiktifController@show')->name('bhn_adiktif.lihat');
 });
 
@@ -99,7 +99,7 @@ Route::group(['prefix' => 'pencegahan'], function(){
    Route::post('tambah', 'PencegahanController@store')->name('pencegahan.store');
    Route::get('ubah/{id}', 'PencegahanController@edit')->name('pencegahan.ubah');
    Route::patch('ubah/{id}', 'PencegahanController@update')->name('pencegahan.update');
-   Route::get('hapus/{id}', 'PencegahanController@destroy')->name('pencegahan.hapus');
+   Route::delete('hapus/{id}', 'PencegahanController@destroy')->name('pencegahan.hapus');
    Route::get('detail/{id}', 'PencegahanController@show')->name('pencegahan.lihat');
 });
 
@@ -110,7 +110,7 @@ Route::group(['prefix' => 'rehabilitasi'], function(){
    Route::post('tambah', 'RehabilitasiController@store')->name('rehabilitasi.store');
    Route::get('ubah/{id}', 'RehabilitasiController@edit')->name('rehabilitasi.ubah');
    Route::patch('ubah/{id}', 'RehabilitasiController@update')->name('rehabilitasi.update');
-   Route::get('hapus/{id}', 'RehabilitasiController@destroy')->name('rehabilitasi.hapus');
+   Route::delete('hapus/{id}', 'RehabilitasiController@destroy')->name('rehabilitasi.hapus');
 
 });
 

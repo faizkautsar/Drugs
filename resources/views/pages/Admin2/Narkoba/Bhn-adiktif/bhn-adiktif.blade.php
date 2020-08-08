@@ -28,8 +28,13 @@
               <td>
                 <a href="{{route('bhn_adiktif.lihat', $bhn_a->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                 <a href="{{route('bhn_adiktif.ubah', $bhn_a->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-                <a href="{{route('bhn_adiktif.hapus', $bhn_a->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
-                class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
+                <!-- <a href="{{route('bhn_adiktif.hapus', $bhn_a->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
+                class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a> -->
+                <form action="{{route('bhn_adiktif.hapus', $bhn_a->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="fa fa-remove"></i></button>
+                </form>
               </td>
             @endforeach
             </tr>

@@ -27,8 +27,13 @@
               <td>{{$r->rujukan}}</td>
               <td>
                 <a href="{{route('rehabilitasi.ubah', $r->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-                <a href="{{route('rehabilitasi.hapus', $r->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
-                  class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
+                <!-- <a href="{{route('rehabilitasi.hapus', $r->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
+                  class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a> -->
+                  <form action="{{route('rehabilitasi.hapus', $r->id)}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="fa fa-remove"></i></button>
+                  </form>
 
              </td>
 
