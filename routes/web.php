@@ -88,7 +88,7 @@ Route::group(['prefix' => 'hukum'], function(){
    Route::post('tambah', 'HukumController@store')->name('hukum.store');
    Route::get('ubah/{id}', 'HukumController@edit')->name('hukum.ubah');
    Route::patch('ubah/{id}', 'HukumController@update')->name('hukum.update');
-   Route::get('hapus/{id}', 'HukumController@destroy')->name('hukum.hapus');
+   Route::delete('hapus/{id}', 'HukumController@destroy')->name('hukum.hapus');
    Route::get('detail/{id}', 'HukumController@show')->name('hukum.lihat');
 });
 
