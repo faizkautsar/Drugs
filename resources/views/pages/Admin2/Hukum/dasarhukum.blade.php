@@ -34,7 +34,7 @@
                 <form action="{{ route('hukum.hapus', $h->id) }}" method="post">
                   @method('DELETE')
                   @csrf
-                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="fa fa-remove"></i></button>
                 </form>
              </td>
            </tr>

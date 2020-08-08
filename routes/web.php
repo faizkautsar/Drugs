@@ -42,7 +42,7 @@ Route::get('/logout', 'Karyawan\AuthKaryawanController@logout')->name('karyawan.
 Route::get('/laporan', 'PesanController@laporan')->name('laporan.index');
 Route::get('/laporan/lihat/{id}', 'PesanController@show')->name('lihat_laporan.index');
 Route::patch('/laporan/update/{laporan}', 'PesanController@update')->name('update.laporan');
-Route::get('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
+Route::delete('/laporan/hapus{id}','PesanController@destroy')->name('laporan.hapus');
 Route::get('/laporan/pdf','PesanController@pdf')->name('cetak_pdf');
 Route::get('laporan/notifikasi','PesanController@notifyLaporan');
 
