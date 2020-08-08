@@ -31,7 +31,7 @@
                <a href="{{route('hukum.ubah', $h->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
                <!-- <a href="{{route('hukum.hapus', $h->id)}}" onclick="return confirm('Apakah anda yakin ingin menghapus?')"
                class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a> -->
-                <form action="{{ route('hukum.hapus', $h->id) }}" method="DELETE">
+                <form action="{{ route('hukum.hapus', $h->id) }}" method="post">
                   @method('DELETE')
                   @csrf
                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>
