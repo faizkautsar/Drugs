@@ -106,7 +106,7 @@ class HukumController extends Controller
     {
       $hukum = Hukum::findOrFail($id);
       $hukum->delete();
-      return redirect()->route('hukum.index');
+      return redirect()->back()->->with('success', 'berhasil menghapus data');
 
     }
 }

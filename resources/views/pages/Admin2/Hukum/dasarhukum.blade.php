@@ -6,6 +6,12 @@
 </div>
 <div class="row">
   <div class="col-12">
+    @if ($message = Session::get('success'))
+      <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>{{ $message }}</strong>
+      </div>
+    @endif
       <table class="table table-bordered" id="myTable">
         <thead>
            <tr>
@@ -28,7 +34,7 @@
              </td>
            </tr>
 
-@endforeach
+           @endforeach
 
   </tbody>
 </table>
