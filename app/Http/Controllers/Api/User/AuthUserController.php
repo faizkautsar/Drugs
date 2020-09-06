@@ -170,5 +170,13 @@ class AuthUserController extends Controller
         ]);
 
     }
+    public function fotoProfile(){
+      $user = Auth::user()->foto;
+      return response()->json([
+        'message'=>'berhasil',
+        'status' => true,
+        'data' => $user
+      ]);
+    }
 
 }

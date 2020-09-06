@@ -32,6 +32,7 @@ Route::post('laporan','Api\User\PesanController@laporan');
 Route::post('profile-update', 'Api\User\AuthUserController@profileUpdate')->middleware('auth:user-api');
 Route::get('profile','Api\User\AuthUserController@profile')->middleware('auth:user-api');
 Route::post('uploadFoto','Api\User\AuthUserController@uploadFoto')->middleware('auth:user-api');
+Route::get ('foto-profile', 'Api\User\AuthUserController@fotoProfile')->middleware('auth:user-api');
 
 Route::get('test', function(){
     event(new App\Events\LaporanEvent('Test'));
