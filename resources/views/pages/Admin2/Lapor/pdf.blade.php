@@ -26,28 +26,28 @@
 
 <br>
 <table id="example1"  class="table table-bordered dt-responsive nowrap"
-       style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+       style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
     <thead>
         <tr>
-            <th>No</th>
-            <th>Peran</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>Narkoba</th>
-            <th>Pekerjaan</th>
-            <th>Pelapor</th>
+            <th><font size="3"> No</font></th>
+            <th><font size="3">  Peran</font></th>
+            <th><font size="3">  Nama</font></th>
+            <th><font size="3">  Alamat</font></th>
+            <th><font size="3">  Narkoba</font></th>
+
+
         </tr>
     </thead>
     <tbody>
       @foreach($laporan as $lapor)
         <tr>
-          <td>{{$loop->iteration}}</td>
-          <th>{{$lapor->peran}}</th>
-          <th>{{$lapor->nama}}</th>
-          <th>{!!$lapor->alamat!!}</th>
-          <th>{{$lapor->jenis_narkoba}}</th>
-          <th>{{$lapor->pekerjaan}}</th>
-          <th>{{$lapor->user->nama}}</th>
+          <td> <font size= "11.0">{{$loop->iteration}}</font></td>
+          <th> <font size= "11.0">{{$lapor->peran}}</font></th>
+          <th><font size="11.0"> {{$lapor->nama}}</font></th>
+          <th> <font size= "11.0"> {!!$lapor->alamat!!}</font></th>
+          <th><font size= "11.0">{{$lapor->jenis_narkoba}}</font></th>
+
+
         </tr>
       @endforeach
     </tbody>
