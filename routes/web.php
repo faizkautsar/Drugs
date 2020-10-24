@@ -15,8 +15,8 @@ Route::get('/', 'AuthAdminController@index')->name('admin.login');
 Route::group(['prefix' => 'admin'], function(){
   Route::get('/admin', 'DashboardController@index_admin')->name('dash.index')->middleware('auth:admin');
 
-  Route::post('/login','AuthAdminController@login')->name('admin.to.login')->middleware('auth:admin');
-  Route::get('/logout', 'AuthAdminController@logout')->name('admin.logout')->middleware('auth:admin');
+  Route::post('/login','AuthAdminController@login')->name('admin.to.login');
+  Route::get('/logout', 'AuthAdminController@logout')->name('admin.logout');
 
 
    //super_admin
