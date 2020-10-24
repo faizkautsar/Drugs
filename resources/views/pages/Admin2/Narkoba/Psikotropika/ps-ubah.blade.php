@@ -8,7 +8,7 @@
       @method('PATCH')
 
      <div class="form-group row">
-        <label class="col-md-3 col-form-label" for="l0">Bahan Adiktif</label>
+        <label class="col-md-3 col-form-label" for="l0">Psikotropika</label>
         <div class="col-md-9">
           <input class="form-control {{$errors->has('nama')?'is-invalid':''}}"
           name="nama" placeholder="nama psikotropika" type="text" value="{{$psikotropika->nama}}">
@@ -47,7 +47,7 @@
             <label class="col-md-3 col-form-label"  for="l15">Keterangan</label>
             <div class="col-md-9">
                 <textarea class="form-control {{$errors->has('keterangan')?'is-invalid':''}}"
-                   name="keterangan" id="basic-2" rows="3">{{$psikotropika->katerangan}}</textarea>
+                   name="keterangan" id="basic-2" rows="3">{{$psikotropika->keterangan}}</textarea>
                 @if ($errors->has('keterangan'))
                   <span class="invalid-feedback" role="alert">
                     <p><b>{{ $errors->first('keterangan') }}</b></p>
@@ -58,9 +58,9 @@
         <div class="form-group row">
             <label class="col-md-3 col-form-label"  for="l16">File input</label>
             <div class="col-md-9">
-              <input name="gambarlama" type="hidden"value="{{$psikotropika->gambar}}">
+              <!-- <img value="{{$psikotropika->gambar}}" width="100" height="100" alt=""> -->
               <input name="gambar" type="file" class="form-control {{$errors->has('gambar')?'is-invalid':''}}"
-              value="{{old('gambar')}}">
+              value="{{$psikotropika->gambar}}" >
                 @if ($errors->has('gambar'))
                   <span class="invalid-feedback" role="alert">
                     <p><b>{{ $errors->first('gambar') }}</b></p>

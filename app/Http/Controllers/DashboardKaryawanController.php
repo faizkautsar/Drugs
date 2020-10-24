@@ -10,7 +10,7 @@ class DashboardKaryawanController extends Controller
 {
   public function _construct()
   {
-    $this->middleware('auth:karyawan');
+    $this->middleware('auth:karyawan')->expect('admin.to.logout');
   }
 
     public function index_karyawan()

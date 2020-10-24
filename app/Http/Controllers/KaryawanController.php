@@ -25,7 +25,7 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
       $this->validate($request,[
-        'nama' => 'required|parent',
+        'nama' => 'required',
         'tempat' => 'required',
         'tanggal' => 'required',
         'email' => 'required|email|unique:karyawans',

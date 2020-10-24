@@ -104,7 +104,7 @@ class PsikotropikaController extends Controller
           'nama'=>'required',
           'dampak'=> 'required',
           'keterangan'=>'required',
-          'gambar'=>'required',
+          'gambar'=>'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
         $psikotropika = Psikotropika::findOrFail($id);
 
@@ -139,8 +139,8 @@ class PsikotropikaController extends Controller
      */
     public function destroy($id)
     {
-        $psikotropika = Psikotropika::findOrFail($id);
-        $psikotropika ->delete();
-        return redirect()->route('ps.index');
+     $psikotropika = Psikotropika::findOrFail($id);
+     $psikotropika ->delete();
+     return redirect()->route('ps.index');
     }
 }
