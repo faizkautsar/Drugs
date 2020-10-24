@@ -48,15 +48,15 @@
         <div class="form-group row">
            <label class="col-md-3 col-form-label" for="l0">Alamat</label>
            <div class="col-md-9">
-             <textarea class="form-control {{$errors->has('no_telp')?'is-invalid':''}} "
-             name="alamat" placeholder="alamat" type="text" value="{{$karyawan->alamat}}">
+             <input class="form-control {{$errors->has('alamat')?'is-invalid':''}}"
+             name="alamat"  type="numeric" value="{{$karyawan->alamat}}">
              @if ($errors->has('alamat'))
                <span class="invalid-feedback" role="alert">
                  <p><b>{{ $errors->first('alamat') }}</b></p>
                </span>
              @endif
-           </textarea>
            </div>
+
          </div>
         <div class="form-actions">
             <div class="form-group row">
