@@ -21,12 +21,12 @@
     </div>
     <!-- /.content-wrapper -->
     <!-- FOOTER -->
-    <footer class="footer text-center">
+    <!-- <footer class="footer text-center">
         <!-- <div class="container"><span>Copyright @ 2017. All rights reserved <a href="https://horizon.dharansh.in">Horizon Admin</a> by <a href="https://themeforest.net/user/unifato">Unifato</a></span>
         </div>
-        <!-- /.container --> -->
-    </footer>
-    </div>
+        <!-- /.container -->
+    <!-- </footer> -->
+    </div> 
     <!--/ #wrapper -->
     <!-- Scripts -->
     @include('templates.partials.admin2._scripts')
