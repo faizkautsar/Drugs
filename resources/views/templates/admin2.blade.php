@@ -22,9 +22,9 @@
     <!-- /.content-wrapper -->
     <!-- FOOTER -->
     <footer class="footer text-center">
-        <div class="container"><span>Copyright @ 2017. All rights reserved <a href="https://horizon.dharansh.in">Horizon Admin</a> by <a href="https://themeforest.net/user/unifato">Unifato</a></span>
+        <!-- <div class="container"><span>Copyright @ 2017. All rights reserved <a href="https://horizon.dharansh.in">Horizon Admin</a> by <a href="https://themeforest.net/user/unifato">Unifato</a></span>
         </div>
-        <!-- /.container -->
+        <!-- /.container --> -->
     </footer>
     </div>
     <!--/ #wrapper -->
