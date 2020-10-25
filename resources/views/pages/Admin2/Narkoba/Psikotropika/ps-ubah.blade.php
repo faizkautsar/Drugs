@@ -58,9 +58,9 @@
         <div class="form-group row">
             <label class="col-md-3 col-form-label"  for="l16">File input</label>
             <div class="col-md-9">
-              <!-- <img value="{{$psikotropika->gambar}}" width="100" height="100" alt=""> -->
+              <input name="gambarlama" type="hidden" value="{{$psikotropika->gambar}}">
               <input name="gambar" type="file" class="form-control {{$errors->has('gambar')?'is-invalid':''}}"
-              value="{{$psikotropika->gambar}}" >
+              value="{{old('gambar')}}">
                 @if ($errors->has('gambar'))
                   <span class="invalid-feedback" role="alert">
                     <p><b>{{ $errors->first('gambar') }}</b></p>
